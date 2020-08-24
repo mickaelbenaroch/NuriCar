@@ -1,0 +1,62 @@
+.envelop {
+    direction: rtl;
+    h1 {
+        color: white;
+        text-align: center;
+        font-size: 30px;
+        margin-top: 30px !important;
+        margin-bottom: 30px;
+    }
+
+    h4 {
+        font-size: 26px;
+        font-family: 'Bellefair';
+        font-weight: bold;
+    }
+    
+    
+    .div-1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        .div1-1 {
+            text-align: center;
+        }
+        .div1-2 {
+            text-align: center;
+            margin-top: 30px;
+        }
+        select {
+            width: 40%;
+            height: 30px;
+        }
+        .but-div {
+            margin-top: 150px;
+            text-align: center;
+            direction: rtl;
+            button {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 10px;
+                padding-bottom: 10px;
+                border-radius: 5px;
+                border: none;
+                background-color: white;
+                color: green;
+                font-weight: bold;
+                font-size: 24px;
+                cursor: pointer;
+            }
+        }
+    }
+    
+}
+
+
+.show {
+    opacity: 1 !important;
+}
+
+.show-button {
+    visibility: visible !important;
+}
