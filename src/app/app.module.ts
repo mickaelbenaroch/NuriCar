@@ -8,16 +8,24 @@ import { MatSelectModule} from '@angular/material/select';
 import { MatInputModule} from '@angular/material/input';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { IconsPageComponent } from './components/icons-page/icons-page.component';
+import { Routes, RouterModule } from '@angular/router';
 
+
+const appRoutes: Routes = [
+  { path: 'icons' , component: IconsPageComponent}
+];
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    IconsPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
     MatSelectModule,
     MatInputModule,
     CommonModule,

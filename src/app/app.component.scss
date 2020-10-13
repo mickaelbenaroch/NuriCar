@@ -3,13 +3,13 @@
     h1 {
         color: white;
         text-align: center;
-        font-size: 30px;
+        font-size: 40px;
         margin-top: 30px !important;
         margin-bottom: 30px;
     }
 
     h4 {
-        font-size: 26px;
+        font-size: 30px;
         font-family: 'Bellefair';
         font-weight: bold;
     }
@@ -28,7 +28,17 @@
         }
         select {
             width: 40%;
-            height: 30px;
+            height: 38px;
+            padding-top: 4px;
+            padding-bottom: 4px;
+            font-size: 20px;
+            padding-right: 5px;
+            option {
+                padding-top: 4px;
+                padding-bottom: 4px;
+                font-size: 20px;
+                padding-right: 5px;
+            }
         }
         .but-div {
             margin-top: 150px;
@@ -46,6 +56,7 @@
                 font-weight: bold;
                 font-size: 24px;
                 cursor: pointer;
+                direction: ltr;
             }
         }
     }
