@@ -17,9 +17,7 @@
       <div class="div1-2" style="opacity:0;" [ngClass]="{'show': modelChoosen}">
         <h4 style="color: white;">בחר שנתון רכב :</h4>
         <select (change)="yearsChoosen($event)">
-          <option *ngFor="let year of yearsToDisplay" value="{{year}}" [(ngModel)]="selectedYears" ngDefaultControl name="model">
-            {{year}}
-          </option>
+          <option *ngFor="let year of yearsToDisplay" value="{{year}}" [(ngModel)]="selectedYears" ngDefaultControl name="year">{{year}}</option>
         </select>
       </div>
       <div style="visibility: hidden;" class="but-div" [ngClass]="{'show-button': yearChoosen}">

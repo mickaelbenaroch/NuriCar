@@ -1,8 +1,16 @@
 .envelop {
     display: flex;
     flex-wrap: wrap;
-    .icon {
-        height: 100px;
-        width: 100px;
+    justify-content: center;
+    padding: 3rem;
+    .icon-div {
+        border-radius: 2px;
+        margin: 15px;
+        cursor: pointer;
+        .icon {
+            height: 100px;
+            width: 100px;
+            cursor: pointer;
+        }
     }
 }

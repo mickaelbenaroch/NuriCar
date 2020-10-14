@@ -13,6 +13,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const appRoutes: Routes = [
+  { path: '' , component: AppComponent},
   { path: 'icons' , component: IconsPageComponent}
 ];
 

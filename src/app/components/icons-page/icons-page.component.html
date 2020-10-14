@@ -1,5 +1,5 @@
 <div class="envelop" *ngIf="iconService && iconService.imagesPathArray">
-    <div *ngFor="let icon of iconService.imagesPathArray">
+    <div class="icon-div" *ngFor="let icon of iconService.imagesPathArray">
         <img class="icon" [src]="icon"/>
     </div>
 </div>

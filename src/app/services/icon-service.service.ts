@@ -15,6 +15,7 @@ export class IconServiceService {
     if (!entity) {
       return;
     }
+    this.imagesPathArray = [];
     this.vehicleSearched = entity;
     //TODO: SAME FOR ALL MANUFACTURERS
     if (this.vehicleSearched.manufacturer === "מאזדה") {
