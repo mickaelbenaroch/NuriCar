@@ -9,7 +9,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "sonar": "./node_modules/.bin/sonar-scanner -Dsonar.projectKey=WarningLightsApp -Dsonar.sources=. -Dsonar.host.url=http://localhost:9000/",
-    "heroku-postbuild": "ng build --prod"
+    "heroku-postbuild": "ng build --prod",
+    "postinstall": "ng build --aot --prod"
   },
   "private": true,
   "dependencies": {
