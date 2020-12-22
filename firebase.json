@@ -1,7 +1,4 @@
 {
-  "projects": {
-    "default": "nuricar-abe68"
-  },
   "hosting": {
     "public": "dist/WarningLightsApp",
     "ignore": [
