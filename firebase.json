@@ -1,4 +1,7 @@
 {
+  "projects": {
+    "default": "nuricar"
+  },
   "hosting": {
     "public": "public",
     "ignore": [
