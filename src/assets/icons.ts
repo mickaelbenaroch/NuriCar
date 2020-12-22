@@ -1,4 +1,4 @@
-import { IconLevel } from "../../../../app/enums/icon-level";
+import { IconLevel } from "../app/enums/icon-level";
 
 export class Image1 {
     
