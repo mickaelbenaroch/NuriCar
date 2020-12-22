@@ -20,6 +20,8 @@ export class IconServiceService {
     //TODO: SAME FOR ALL MANUFACTURERS
     if (this.vehicleSearched.manufacturer === "מאזדה") {
       this.vehicleSearched.manufacturer = "mazda";
+    } else if (this.vehicleSearched.manufacturer === "טויוטה") {
+      this.vehicleSearched.manufacturer = "toyota";
     }
     let prefix = '/assets/' + this.vehicleSearched.manufacturer + '/' + this.vehicleSearched.vehicleType + '/';
     if (this.vehicleSearched.isSingleYear) {
