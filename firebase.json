@@ -3,7 +3,7 @@
     "default": "nuricar"
   },
   "hosting": {
-    "public": "public",
+    "public": "dist/WarningLightsApp",
     "ignore": [
       "firebase.json",
       "**/.*",
