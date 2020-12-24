@@ -2,10 +2,32 @@
   <h1>נוריות</h1>
   <div>
     <div class="div-1">
-      <div class="div1-1">
+      <carousel [freeScroll]="true">
+        <div class="carousel-cell">
+            <img src="/assets/symbols/mazda.png">
+            <span>מזדה</span>
+        </div>
+        <div class="carousel-cell">
+          <img src="/assets/symbols/fiat.jpg">
+          <span>פיאט</span>
+      </div>
+      <div class="carousel-cell">
+        <img src="/assets/symbols/hunday.jpg">
+        <span>יונדאי</span>
+    </div>
+    <div class="carousel-cell">
+      <img src="/assets/symbols/subaru.jpg">
+      <span>סוברו</span>
+  </div>
+  <div class="carousel-cell">
+    <img src="/assets/symbols/ford.jpg">
+    <span>פורד</span>
+</div>
+    </carousel>
+      <!-- <div class="div1-1">
         <h4 style="color: white;">בחר יצרן רכב :</h4>
         <select (change)="manufacturerChosen($event)">
-          <option *ngFor="let car of cars.cars" value="{{car.text}}" [(ngModel)]="selectedCar" ngDefaultControl name="car">{{car.text}}</option>
+          <option *ngFor="let car of cars.cars" value="{{car.name}}" [(ngModel)]="selectedCar" ngDefaultControl name="car{{car.name}}">{{car.name}}</option>
         </select>
       </div>
       <div class="div1-2" style="opacity:0;" [ngClass]="{'show': manufacturerChoosen}">
@@ -19,7 +41,7 @@
         <select (change)="yearsChoosen($event)">
           <option *ngFor="let year of yearsToDisplay" value="{{year}}" [(ngModel)]="selectedYears" ngDefaultControl name="year">{{year}}</option>
         </select>
-      </div>
+      </div> -->
       <div style="visibility: hidden;" class="but-div" [ngClass]="{'show-button': yearChoosen}">
         <button (click)="searchCar()">!המשך</button>
       </div>

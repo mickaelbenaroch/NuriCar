@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IconsPageComponent } from './components/icons-page/icons-page.component';
 import { Routes, RouterModule } from '@angular/router';
-
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 const appRoutes: Routes = [
   { path: '' , component: AppComponent},
@@ -30,7 +30,8 @@ const appRoutes: Routes = [
     MatSelectModule,
     MatInputModule,
     CommonModule,
-    NgbModule 
+    NgbModule,
+    IvyCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
