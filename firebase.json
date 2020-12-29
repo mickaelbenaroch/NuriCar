@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/WarningLightsApp",
+    "public": "WarningLightsApp",
     "ignore": [
       "firebase.json",
       "**/.*",
