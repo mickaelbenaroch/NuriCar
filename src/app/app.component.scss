@@ -71,3 +71,24 @@
 .show-button {
     visibility: visible !important;
 }
+.picsum-img-wrapper {
+    display: flex;
+    justify-content: center;
+    img {
+        height: 231px;
+        width: 231px;
+    }
+}
+
+h2  {
+    position: relative;
+    top: 23px;
+    justify-content: center;
+    display: flex;
+    color: white;
+}
+
+.wrapper {
+    padding: 15px;
+    height: 100%;
+}
