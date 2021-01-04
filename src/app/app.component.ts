@@ -1,9 +1,8 @@
 import { Component, HostListener, OnInit } from '@angular/core';
-import { VehiculeEntity} from 'src/app/models/VehiculeModel'
 import { Cars} from 'src/app/models/Cars'
-import { VehiculeTypes} from 'src/app/models/vehiculesTypes'
 import { Router } from '@angular/router';
 import { IconServiceService } from './services/icon-service.service';
+import { Car } from './models/car';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +11,7 @@ import { IconServiceService } from './services/icon-service.service';
 })
 export class AppComponent implements OnInit{
 
-  images = ['/assets/symbols/abarth.jpg', 
-            '/assets/symbols/alpha.jpg',
+  images = ['/assets/symbols/alpha.jpg',
             '/assets/symbols/audi.png', 
             '/assets/symbols/bmw.jpg',
             '/assets/symbols/chevrolet.jpg', 
@@ -37,7 +35,6 @@ export class AppComponent implements OnInit{
             '/assets/symbols/peugeot.jpg', 
             '/assets/symbols/renault.jpg',
             '/assets/symbols/rover.jpg',
-            '/assets/symbols/sanyang.jpg', 
             '/assets/symbols/seat.jpg',
             '/assets/symbols/skoda.png', 
             '/assets/symbols/smart.png',
@@ -48,7 +45,6 @@ export class AppComponent implements OnInit{
             '/assets/symbols/wolswagen.jpg',
           ];
   carsnames = [
-            "אברת",
             "אלפא רומיאו",
             "אאודי",
             "ב.מ.וו",
@@ -73,7 +69,6 @@ export class AppComponent implements OnInit{
             "פיג'ו",
             "רנו",
             "רובר",
-            "סאנגיונג",
             "סיאט",
             "סקודה",
             "סמארט",
@@ -83,22 +78,16 @@ export class AppComponent implements OnInit{
             "וולוו",
             "פולקסווגן"
   ];
-  public modelChoosen: boolean = false;
   public manufacturerChoosen: boolean = false;
+  public modelChoosen: boolean = false;
   public yearChoosen: boolean = false;
   title = 'WarningLightsApp';
-  selectedValue: string;
-  selectedCar: string;
+  selectedManufacturer: string;
   selectedModel: string;
-  selectedYears: string;
-  selectedCarIconsNumber: number;
-  carCollection: Cars = new Cars();
-  carModels: string[] = [];
-  carCriteria: VehiculeEntity;
-  cars: VehiculeTypes = new VehiculeTypes();
-  yearsToDisplay: string[] = [];
+  selectedYear: string;
   buttonClicked: boolean = false;
-  yearIndex: number;
+  public carsJson = new Cars();
+  public selectedModelJson = new Array<Car>();
 
   @HostListener('window:popstate', ['$event'])
   onPopState(event) {
@@ -117,218 +106,132 @@ export class AppComponent implements OnInit{
     }
   }
 
-  manufacturerChosen(manufacturer: any) {
-    this.selectedCar = manufacturer.target.value;
-    this.manufacturerChoosen = true;
-    switch (this.selectedCar) {
+  ManufacturerChange(event: any) {
+    if (event) {
+      this.selectedManufacturer = event.value;
+      this.manufacturerChoosen = true;
+      this.initModels();
+    }
+  }
+
+  ModelChange(event: any) {
+    if (event) {
+      this.selectedModel = event.value;
+      this.modelChoosen = true;
+    }
+  }
+
+
+  initModels() {
+    if (!this.selectedManufacturer) {
+      return;
+    }
+    switch (this.selectedManufacturer) {
       case "אאודי":
-        break;
-      case "אברת":
-        break;
-      case "אוטוביאנקי":
-        break;
-      case "אולדסמוביל":
-        break;
-      case "אוסטין":
+        this.selectedModelJson = this.carsJson.audi;
         break;
       case "אופל":
-        break;
-      case "אינפיניטי":
-        break;
-      case "אל.טי.איי":
+        this.selectedModelJson = this.carsJson.opel;
         break;
       case "אלפא רומיאו":
-        break;
-      case "אם. ג'י. / MG":
-        break;
-      case "אסטון מרטין":
+        this.selectedModelJson = this.carsJson.alpha;
         break;
       case "ב.מ.וו":
-        break;
-      case "ביואיק":
-        break;
-      case "בנטלי":
-        break;
-      case "ג'י.איי.סי/GAC":
-        break;
-      case "ג'יאו - Geo":
+        this.selectedModelJson = this.carsJson.bmw;
         break;
       case "ג'יפ / Jeep":
-        break;
-      case "גרייט וול":
+        this.selectedModelJson = this.carsJson.jeep;
         break;
       case "דאצ'יה":
-        break;
-      case "דודג'":
-        break;
-      case "די.אס / DS":
-        break;
+        this.selectedModelJson = this.carsJson.dacia;
+        break;      
       case "דייהו":
+        this.selectedModelJson = this.carsJson.daewoo;
         break;
       case "דייהטסו":
+        this.selectedModelJson = this.carsJson.dayatsu;
         break;
       case "הונדה":
+        this.selectedModelJson = this.carsJson.honda;
         break;
       case "וולוו":
+        this.selectedModelJson = this.carsJson.volvo;
         break;
       case "טויוטה":
-        this.selectedModel = this.carCollection.toyota[0].modelName;
-        break;
-      case "טסלה":
-        break;
-      case "יגואר":
+        this.selectedModelJson = this.carsJson.toyota;
         break;
       case "יונדאי":
-        break;
-      case "לאדה":
-        break;
-      case "לינקולן":
-        break;
-      case"ליצ'י":
-        break;
-      case "למבורגיני":
-        break;
-      case "לנצ'יה":
-        break;
-      case"לקסוס":
-        break;
+        this.selectedModelJson = this.carsJson.hunday;
+        break; 
       case"מאזדה":
-        this.selectedModel = this.carCollection.mazda[0].modelName;
-        break;
-      case "מזראטי":
+        this.selectedModelJson = this.carsJson.mazda;
         break;
       case"מיני":
+        this.selectedModelJson = this.carsJson.mini;
         break;
       case "מיצובישי":
+        this.selectedModelJson = this.carsJson.mistubishi;
         break;
       case "מרצדס":
+        this.selectedModelJson = this.carsJson.mercedes;
         break;
       case "ניסאן":
-        break;
-      case "ננג'ינג":
-        break;
-      case "סאאב":
-        break;
-      case "סאנגיונג":
-        break;
-      case "סאנשיין":
+        this.selectedModelJson = this.carsJson.nissan;
         break;
       case "סובארו":
+        this.selectedModelJson = this.carsJson.subaru;
         break;
       case "סוזוקי":
+        this.selectedModelJson = this.carsJson.suzuki;
         break;
       case "סיאט":
+        this.selectedModelJson = this.carsJson.seat;
         break;
       case "סיטרואן":
+        this.selectedModelJson = this.carsJson.citroen;
         break;
       case "סמארט":
+        this.selectedModelJson = this.carsJson.smart;
         break;
       case "סקודה":
+        this.selectedModelJson = this.carsJson.skoda;
         break;
       case "פולקסווגן":
-        break;
-      case "פונטיאק":
+        this.selectedModelJson = this.carsJson.wolswagen;
         break;
       case "פורד":
-        break;
-      case "פורשה":
+        this.selectedModelJson = this.carsJson.ford;
         break;
       case "פיאט":
+        this.selectedModelJson = this.carsJson.fiat;
         break;
       case "פיג'ו":
-        break;
-      case "פרארי":
-        break;
-      case "קאדילק":
+        this.selectedModelJson = this.carsJson.peugeot;
         break;
       case "קיה":
+        this.selectedModelJson = this.carsJson.kia;
         break;
       case "קרייזלר":
+        this.selectedModelJson = this.carsJson.crysler;
         break;
       case "רובר":
+        this.selectedModelJson = this.carsJson.rover;
         break;
       case "רנו":
+        this.selectedModelJson = this.carsJson.renault;
         break;
       case "שברולט":
+        this.selectedModelJson = this.carsJson.chevrolet;
         break;
     }
   }
 
   modelChosen(model?: any) : any {
-    this.yearsToDisplay = [];
-    this.selectedModel = model.target.value;
-    this.modelChoosen = true;
-    let temp;
-    switch (this.selectedModel) {
-      case "3":
-        temp = this.carCollection.mazda.find(c => c.modelName === model.target.value);
-        break;
-  //TODO: handle other cases not only Mazda
-      default:
-        temp = this.carCollection.mazda.find(c => c.modelName === model.target.value);
-        break;
-    }
-    if (temp ) {
-      temp.years.forEach(year => {
-        this.yearsToDisplay.push(year);
-      })
-    }
-    this.selectedYears = this.yearsToDisplay[0];
-    let temp2 = this.carCollection.mazda.find(c => c.modelName === this.selectedModel);
-    this.yearIndex = temp.years.indexOf(this.selectedYears);
-    this.selectedCarIconsNumber = temp2.icons[this.yearIndex];
-    this.yearChoosen = true;
   }
 
   yearsChoosen(event: any) {
-    this.selectedYears = event.target.value;
-    let temp = this.carCollection.mazda.find(c => c.modelName === this.selectedModel);
-    this.yearIndex = temp.years.indexOf(this.selectedYears);
-    this.selectedCarIconsNumber = temp.icons[this.yearIndex];
   }
 
   searchCar() {
-    if (!this.selectedCar || !this.selectedModel || !this.selectedYears || !this.selectedCarIconsNumber) {
-      return;
-    }
-    this.carCriteria = new VehiculeEntity();
-    this.carCriteria.manufacturer = this.selectedCar;
-    this.carCriteria.vehicleType = this.selectedModel;
-    if (this.selectedYears.includes('-') && !this.selectedYears.includes('+')) {
-        this.carCriteria.isSingleYear = false;
-    } else {
-      this.carCriteria.isSingleYear = true;
-    }
-    this.carCriteria.vehicleYear = this.selectedYears;
-    this.carCriteria.iconsNumber = this.selectedCarIconsNumber;
-    this.buttonClicked = true;
-    this.iconService.searchCar(this.carCriteria);
-    this.router.navigateByUrl('icons');
-  }
-
-  modelChoosenFakeCall(param: any) {
-    this.yearsToDisplay = [];
-    this.selectedModel = param;
-    this.modelChoosen = true;
-    let temp;
-    switch (this.selectedModel) {
-      case "3":
-        temp = this.carCollection.mazda.find(c => c.modelName === param);
-        break;
-  //TODO: handle other cases not only Mazda
-      default:
-        temp = this.carCollection.mazda.find(c => c.modelName === param);
-        break;
-    }
-    if (temp ) {
-      temp.years.forEach(year => {
-        this.yearsToDisplay.push(year);
-      })
-    }
-    this.selectedYears = this.yearsToDisplay[0];
-    let temp2 = this.carCollection.mazda.find(c => c.modelName === this.selectedModel);
-    this.yearIndex = temp.years.indexOf(this.selectedYears);
-    this.selectedCarIconsNumber = temp2.icons[this.yearIndex];
-    this.yearChoosen = true;
   }
 }

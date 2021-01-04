@@ -1,94 +1,61 @@
 .envelop {
     direction: rtl;
-    h1 {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    text-align: right;
+
+    .title-div {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        h1 {
+            color: white;
+            font-weight: bold;
+        }
+    }
+    .row-dp {
+        text-align: right;
+        direction: rtl;
+        width: 80%;
+        background-color: #414141;
+        padding: 10px;
+    }
+    .second-dp {
+        margin-top: 2rem;
+    }
+}
+
+::ng-deep {
+    .mat-option-text {
+        direction: rtl;
+        text-align: right;
+        font-size: 20px;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+::ng-deep {
+    .mat-form-field-label {
+        text-align: right;
+        direction: rtl;
+    }
+}
+
+::ng-deep {
+    mat-select{
+        text-align: right;
+        direction: rtl;
+   }
+}
+
+::ng-deep {
+    mat-label {
         color: white;
-        text-align: center;
-        font-size: 40px;
-        margin-top: 30px !important;
-        margin-bottom: 30px;
+        text-align: right;
+        direction: rtl;
     }
-
-    h4 {
-        font-size: 30px;
-        font-family: 'Bellefair';
-        font-weight: bold;
-    }
-    
-    
-    .div-1 {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        .div1-1 {
-            text-align: center;
-        }
-        .div1-2 {
-            text-align: center;
-            margin-top: 30px;
-        }
-        select {
-            width: 40%;
-            height: 38px;
-            padding-top: 4px;
-            padding-bottom: 4px;
-            font-size: 20px;
-            padding-right: 5px;
-            option {
-                padding-top: 4px;
-                padding-bottom: 4px;
-                font-size: 20px;
-                padding-right: 5px;
-            }
-        }
-        .but-div {
-            margin-top: 150px;
-            text-align: center;
-            direction: rtl;
-            button {
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-top: 10px;
-                padding-bottom: 10px;
-                border-radius: 5px;
-                border: none;
-                background-color: white;
-                color: green;
-                font-weight: bold;
-                font-size: 24px;
-                cursor: pointer;
-                direction: ltr;
-            }
-        }
-    }
-    
-}
-
-
-.show {
-    opacity: 1 !important;
-}
-
-.show-button {
-    visibility: visible !important;
-}
-.picsum-img-wrapper {
-    display: flex;
-    justify-content: center;
-    img {
-        height: 231px;
-        width: 231px;
-    }
-}
-
-h2  {
-    position: relative;
-    top: 23px;
-    justify-content: center;
-    display: flex;
-    color: white;
-}
-
-.wrapper {
-    padding: 15px;
-    height: 100%;
 }

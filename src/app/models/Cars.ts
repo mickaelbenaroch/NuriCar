@@ -1,4 +1,4 @@
-import {Car} from '../interfaces/car'
+import {Car} from './car'
 
 export class Cars {
     public mazda: Car[] = [
@@ -28,4 +28,34 @@ export class Cars {
         {value: "12", modelName: "וורסו", years: ['2009-2013','2014-2018'], icons: [27, 37], isHybrid: false},
         {value: "13", modelName: "יאריס", years: ['2009-2012','2013-2014','2015-2017', '2018-2019', 'hybrid', '2012-2014h', '2015-2017h', '2018-2019h'], icons: [31, 32, 37, 56, 41, 40, 53], isHybrid: true},
       ];
+      public alpha: Car[] = [];
+      public audi: Car[] = [];
+      public bmw: Car[] = [];
+      public chevrolet: Car[] = [];
+      public citroen: Car[] = [];
+      public crysler: Car[] = [];
+      public dacia: Car[] = [];
+      public daewoo: Car[] = [];
+      public dayatsu: Car[] = [];
+      public fiat: Car[] = [];
+      public ford: Car[] = [];
+      public honda: Car[] = [];
+      public hunday: Car[] = [];
+      public jeep: Car[] = [];
+      public kia: Car[] = [];
+      public mercedes: Car[] = [];
+      public mini: Car[] = [];
+      public mistubishi: Car[] = [];
+      public nissan: Car[] = [];
+      public opel: Car[] = [];
+      public peugeot: Car[] = [];
+      public renault: Car[] = [];
+      public rover: Car[] = [];
+      public seat: Car[] = [];
+      public skoda: Car[] = [];
+      public smart: Car[] = [];
+      public subaru: Car[] = [];
+      public suzuki: Car[] = [];
+      public volvo: Car[] = [];
+      public wolswagen: Car[] = [];
 } 
