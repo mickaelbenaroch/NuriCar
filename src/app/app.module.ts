@@ -11,17 +11,21 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { IconsPageComponent } from './components/icons-page/icons-page.component';
 import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { MainPageComponent } from './components/main-page/main-page.component';
+import { HybridPipe } from './pipes/hybrid.pipe';
 
 
 const appRoutes: Routes = [
-  { path: '' , component: AppComponent},
+  { path: '' , component: MainPageComponent},
   { path: 'icons' , component: IconsPageComponent}
 ];
 
 @NgModule({
   declarations: [
     AppComponent,
-    IconsPageComponent
+    IconsPageComponent,
+    MainPageComponent,
+    HybridPipe
   ],
   imports: [
     BrowserModule,

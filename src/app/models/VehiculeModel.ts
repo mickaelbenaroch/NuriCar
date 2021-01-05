@@ -9,4 +9,6 @@ export class VehiculeEntity {
     public vehicleYear: string;
 
     public iconsNumber: number;
+
+    public isHybrid: boolean;
 }

@@ -17,21 +17,18 @@ export class IconServiceService {
     }
     this.imagesPathArray = [];
     this.vehicleSearched = entity;
-    //TODO: SAME FOR ALL MANUFACTURERS
-    if (this.vehicleSearched.manufacturer === "מאזדה") {
-      this.vehicleSearched.manufacturer = "mazda";
-    } else if (this.vehicleSearched.manufacturer === "טויוטה") {
-      this.vehicleSearched.manufacturer = "toyota";
-    }
-    let prefix = '/assets/' + this.vehicleSearched.manufacturer + '/' + this.vehicleSearched.vehicleType + '/';
-    if (this.vehicleSearched.isSingleYear) {
-      prefix = prefix + this.vehicleSearched.vehicleYear + '/';
-      prefix = prefix.replace('+', 'post');
-    } else {
-      prefix = prefix + this.vehicleSearched.vehicleYear + '/';
-    }
-    for (let i = 1; i < this.vehicleSearched.iconsNumber + 1; i++) {
-      this.imagesPathArray.push(prefix + 'image' + i + '.png');
-    }
+      let prefix = '/assets/' + this.vehicleSearched.manufacturer + '/' + this.vehicleSearched.vehicleType + '/';
+      if (this.vehicleSearched.isHybrid) {
+        prefix += 'hybrid/';
+      }
+      if (this.vehicleSearched.isSingleYear) {
+        prefix = prefix + this.vehicleSearched.vehicleYear + '/';
+        prefix = prefix.replace('+', 'post');
+      } else {
+        prefix = prefix + this.vehicleSearched.vehicleYear + '/';
+      }
+      for (let i = 1; i < this.vehicleSearched.iconsNumber + 1; i++) {
+        this.imagesPathArray.push(prefix + 'image' + i + '.png');
+      }
   }
 }

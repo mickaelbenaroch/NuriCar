@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { IconServiceService} from 'src/app/services/icon-service.service'
 
 @Component({
@@ -8,10 +9,13 @@ import { IconServiceService} from 'src/app/services/icon-service.service'
 })
 export class IconsPageComponent implements OnInit {
 
-
-  constructor(public iconService: IconServiceService) { }
+  constructor(public iconService: IconServiceService,
+              public router: Router) { }
 
   ngOnInit(): void {
+    if(this.iconService && (!this.iconService.imagesPathArray || this.iconService.imagesPathArray.length === 0)) {
+      this.router.navigateByUrl('/');
+    }
   }
 
 }

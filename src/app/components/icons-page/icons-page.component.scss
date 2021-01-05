@@ -1,11 +1,22 @@
+.div-1 {
+    text-align: center;
+    font-size: 28px;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 1.5rem;
+    line-height: initial;
+
+}
 .envelop {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     padding: 3rem;
+    padding-top: 1.3rem;
     .icon-div {
         border-radius: 2px;
         margin: 15px;
+        border-radius: 50%;
         cursor: pointer;
         .icon {
             height: 100px;

@@ -4,4 +4,5 @@ export class Car {
     years: string[] = [];
     icons: number[] = [];
     isHybrid: boolean;
+    englishModelName: string;
   }

@@ -1,0 +1,79 @@
+.envelop {
+    direction: rtl;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    text-align: right;
+
+    .title-div {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        h1 {
+            color: white;
+            font-weight: bold;
+        }
+    }
+    .row-dp {
+        text-align: right;
+        direction: rtl;
+        width: 80%;
+        background-color: #414141;
+        padding: 10px;
+    }
+    .second-dp {
+        margin-top: 2rem;
+    }
+    .but-div {
+        margin-top: 2rem;
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        button {
+            padding-top: 9px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 25px;
+            color: white;
+            background-color: #414141;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+    }
+}
+
+::ng-deep {
+    .mat-option-text {
+        direction: rtl;
+        text-align: right;
+        font-size: 20px;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+}
+
+::ng-deep {
+    .mat-form-field-label {
+        text-align: right;
+        direction: rtl;
+    }
+}
+
+::ng-deep {
+    mat-select{
+        text-align: right;
+        direction: rtl;
+   }
+}
+
+::ng-deep {
+    mat-label {
+        color: white;
+        text-align: right;
+        direction: rtl;
+    }
+}
