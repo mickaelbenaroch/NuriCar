@@ -9,15 +9,25 @@
     .title-div {
         margin-bottom: 1rem;
         img {
-            width: 220px;
+            width: 155px;
+            padding-left: 3px;
+        }
+    }
+    .arrow-div {
+        width: 100%;
+        text-align: left;
+        .arrow {
+            width: 60px;
+            height: 60px;
         }
     }
     .row-dp {
         text-align: right;
         direction: rtl;
-        width: 80%;
-        background-color: #414141;
+        width: 66%;        
+        background-color: #EEEEEE;
         padding: 10px;
+        height: 45px;
     }
     .second-dp {
         margin-top: 2rem;
@@ -52,6 +62,9 @@
             height: 30px;
         }
     }
+    .mat-option {
+        background-color: #EEEEEE;
+    }
 }
 
 ::ng-deep {
@@ -70,8 +83,18 @@
 
 ::ng-deep {
     mat-label {
-        color: white;
+        color: #707070;
         text-align: right;
         direction: rtl;
+    }
+}
+
+::ng-deep {
+    .mat-select-arrow {
+        color: #00B9B4 !important;
+    }   
+    .mat-select-arrow-wrapper {
+        position: relative;
+        bottom: 9px;
     }
 }
