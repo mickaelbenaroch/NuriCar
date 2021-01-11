@@ -13,10 +13,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { HybridPipe } from './pipes/hybrid.pipe';
+import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 
 
 const appRoutes: Routes = [
-  { path: '' , component: MainPageComponent},
+  { path: '' , component: SplashScreenComponent},
+  { path: 'main' , component: MainPageComponent},
   { path: 'icons' , component: IconsPageComponent}
 ];
 
@@ -25,7 +27,8 @@ const appRoutes: Routes = [
     AppComponent,
     IconsPageComponent,
     MainPageComponent,
-    HybridPipe
+    HybridPipe,
+    SplashScreenComponent
   ],
   imports: [
     BrowserModule,
