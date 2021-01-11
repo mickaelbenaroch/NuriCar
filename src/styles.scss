@@ -1,7 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;   background-image: linear-gradient(to right, #464749 , #1A1818) !important; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-image: url("/assets/nuricar/bg_body.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
