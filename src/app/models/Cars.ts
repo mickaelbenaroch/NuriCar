@@ -18,7 +18,7 @@ export class Cars {
         {value: "2", modelName: "אבנסיס", years: ['2009-2012', '2013-2015', '2016-2019'], icons: [25, 35, 38], isHybrid: false, englishModelName: 'avensis'},
         {value: "3", modelName: "אייגו", years: ['2012-2014','2015-2017','2018post'], icons: [20, 39, 40], isHybrid: false, englishModelName: 'aygo'},    
         {value: "4", modelName: "קמרי", years: ['2002-2006','2007-2012','2013-2014','2015-2017', '2018-2020', 'hybrid', '2007-2011h', '2012-2014h', '2015-2017h', '2018-2020h'], icons: [25, 32, 36, 37, 51, 28, 35, 34, 56], isHybrid: true, englishModelName: 'camry'},
-        {value: "5", modelName: "CHR", years: ['2016post', 'hybrid', '2016post'], icons: [55, 61], isHybrid: false, englishModelName: 'chr'},
+        {value: "5", modelName: "CHR", years: ['2016post', 'hybrid', '2016posth'], icons: [55, 61], isHybrid: false, englishModelName: 'chr'},
         {value: "6", modelName: "קורולה", years: ['2003-2007', '2008-2012', '2013-2018', '2019post', 'hybrid', '2020post'], icons: [25, 42, 62, 63, 59], isHybrid: true, englishModelName: 'corolla'},
         {value: "7", modelName: "אבלון", years: ['2005-2012', '2013-2018', '2019-2020', 'hybrid', '2013-2016h', '2017-2018h', '2019-2020h'], icons: [34, 35, 53, 51, 34, 36], isHybrid: true, englishModelName: 'evlon'},
         {value: "8", modelName: "איילנדר", years: ['2011-2013', '2014-2016', '2017-2019', '2020post', 'hybrid', '2011-2013h', '2014-2016h', '2017-2019h', '2020posth'], icons: [31, 35, 42, 54, 30, 38, 41, 52 ], isHybrid: true, englishModelName: 'highlander'},

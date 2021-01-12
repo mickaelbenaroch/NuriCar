@@ -6,9 +6,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class HybridPipe implements PipeTransform {
 
   transform(value: string): string {
-    if (value && value.includes('h')) {
+    if (value && value.includes('h') && !value.includes('posth') ) {
       let temp = value.slice(0, -1);
       temp += ' היבריד ';
+      return temp;
+    } else if (value.includes('post') && !value.includes('posth')) {
+      let temp = value.replace('post', ' והלאה ');
+      return temp;
+    } else if (value.includes('posth')) {
+      let temp = value.replace('posth', ' והלאה (היברידי) ');
       return temp;
     } else {
       return value;

@@ -16,6 +16,7 @@
     .arrow-div {
         width: 100%;
         text-align: left;
+        margin-bottom: 15px;
         .arrow {
             width: 60px;
             height: 60px;
@@ -38,16 +39,16 @@
         display: flex;
         justify-content: center;
         button {
-            padding-top: 9px;
-            padding-bottom: 10px;
-            padding-left: 10px;
-            padding-right: 10px;
-            font-size: 25px;
-            color: white;
-            background-color: #414141;
             cursor: pointer;
+            background-color: #00B9B4;
+            color: white;
             border: none;
-            border-radius: 5px;
+            width: 62%;
+            padding-top: 9px;
+            margin-top: 36px;
+            padding-bottom: 8px;
+            font-family: 'Assistant', sans-serif;
+            font-size: 20px;
         }
     }
 }
@@ -64,6 +65,22 @@
     }
     .mat-option {
         background-color: #EEEEEE;
+    }
+    .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+        background-color: #EEEEEE !important;
+    }
+    .mat-option.mat-active {
+        background-color: #EEEEEE !important;
+    }
+    .mat-option-text {
+        color: #707070 !important;
+    }
+    .mat-select-value {
+        color: #707070 !important;
+        font-weight: bold;
+    }
+    .mat-select-trigger {
+        bottom: 6px;
     }
 }
 
@@ -86,6 +103,8 @@
         color: #707070;
         text-align: right;
         direction: rtl;
+        position: relative;
+        bottom: 5px;
     }
 }
 
@@ -95,6 +114,6 @@
     }   
     .mat-select-arrow-wrapper {
         position: relative;
-        bottom: 9px;
+        bottom: 7px;
     }
 }

@@ -133,6 +133,10 @@ constructor(private router: Router, private iconService: IconServiceService) {}
     }
   }
 
+  Back() {
+    this.router.navigateByUrl('');
+  }
+
 
   initModels() {
     if (!this.selectedManufacturer) {
