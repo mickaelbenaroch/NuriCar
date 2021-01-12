@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { VehiculeEntity } from '../models/VehiculeModel';
 import {Icon} from '../models/icon'
+import { Cars } from '../models/Cars';
+import { Car } from '../models/car';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,16 @@ export class IconServiceService {
   vehicleSearched: VehiculeEntity = new VehiculeEntity();
   imagesPathArray: string[] = [];
   iconDescriptionJson: Icon[] = [];
+  public manufacturerChoosen: boolean = false;
+  public modelChoosen: boolean = false;
+  public yearChoosen: boolean = false;
+  selectedManufacturer: string;
+  selectedModel: any;
+  selectedYear: string;
+  buttonClicked: boolean = false;
+  public carsJson = new Cars();
+  public selectedModelJson = new Array<Car>();
+  public vehicle = new VehiculeEntity();
 
   constructor() { }
 

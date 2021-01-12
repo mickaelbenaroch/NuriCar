@@ -7,28 +7,28 @@
     </div>
         <div class="row-dp">
           <mat-label>בחר יצרן:</mat-label>
-          <mat-select [(ngModel)]="selectedManufacturer" name="manufacturer" (selectionChange)="ManufacturerChange($event)">
+          <mat-select [(ngModel)]="iconService.selectedManufacturer" name="manufacturer" (selectionChange)="ManufacturerChange($event)">
             <mat-option  class="opt" *ngFor="let car of carsnames; let i = index" [value]="car">
               <img style="margin-left: 7px;" src='{{images[i]}}'>{{car}}
             </mat-option>
           </mat-select>
         </div>
     
-        <div class="row-dp second-dp" *ngIf="manufacturerChoosen && selectedModelJson">
+        <div class="row-dp second-dp" *ngIf="iconService.manufacturerChoosen && iconService.selectedModelJson">
           <mat-label>בחר מודל:</mat-label>
-          <mat-select [(ngModel)]="selectedModel" name="model" (selectionChange)="ModelChange($event)">
-            <mat-option  class="opt" *ngFor="let model of selectedModelJson" [value]="model">{{model.modelName}}</mat-option>
+          <mat-select [(ngModel)]="iconService.selectedModel" name="model" (selectionChange)="ModelChange($event)">
+            <mat-option  class="opt" *ngFor="let model of iconService.selectedModelJson" [value]="model">{{model.modelName}}</mat-option>
           </mat-select>
         </div>
     
-        <div class="row-dp second-dp" *ngIf="modelChoosen">
+        <div class="row-dp second-dp" *ngIf="iconService.modelChoosen">
           <mat-label>בחר שנה:</mat-label>
-          <mat-select [(ngModel)]="selectedYear" name="year" (selectionChange)="YearChange($event)">
-            <mat-option  class="opt" *ngFor="let year of selectedModel.years" [value]="year">{{year | hybrid}}</mat-option>
+          <mat-select [(ngModel)]="iconService.selectedYear" name="year" (selectionChange)="YearChange($event)">
+            <mat-option  class="opt" *ngFor="let year of iconService.selectedModel.years" [value]="year">{{year | hybrid}}</mat-option>
           </mat-select>
         </div>
     
-        <div class="but-div" *ngIf="buttonClicked" (click)="SearchCar()">
+        <div class="but-div" *ngIf="iconService.buttonClicked" (click)="SearchCar()">
           <button>חפש!</button>
         </div>
     </div>

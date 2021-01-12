@@ -1,8 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Car } from 'src/app/models/car';
-import { Cars } from 'src/app/models/Cars';
-import { VehiculeEntity } from 'src/app/models/VehiculeModel';
 import { IconServiceService } from 'src/app/services/icon-service.service';
 
 @Component({
@@ -80,56 +77,46 @@ export class MainPageComponent implements OnInit {
       "רנו",
       "שברולט",
   ];
-  public manufacturerChoosen: boolean = false;
-  public modelChoosen: boolean = false;
-  public yearChoosen: boolean = false;
   title = 'WarningLightsApp';
-  selectedManufacturer: string;
-  selectedModel: any;
-  selectedYear: string;
-  buttonClicked: boolean = false;
-  public carsJson = new Cars();
-  public selectedModelJson = new Array<Car>();
-  public vehicle = new VehiculeEntity();
 
   @HostListener('window:popstate', ['$event'])
     onPopState(event) {
     this.ngOnInit();
   }
 
-constructor(private router: Router, private iconService: IconServiceService) {}
+constructor(private router: Router, public iconService: IconServiceService) {}
 
   ngOnInit() {
     let currentUrl = location.pathname;
-    if (currentUrl === '/' && this.buttonClicked) {
-    this.buttonClicked = false;
+    if (currentUrl === '/' && this.iconService.buttonClicked) {
+    this.iconService.buttonClicked = false;
     }
-    if (currentUrl === '/icons' && !this.buttonClicked) {
+    if (currentUrl === '/icons' && !this.iconService.buttonClicked) {
     this.router.navigateByUrl('');
     }
   }
 
   ManufacturerChange(event: any) {
     if (event) {
-      this.selectedManufacturer = event.value;
+      this.iconService.selectedManufacturer = event.value;
       this.initModels();
-      this.manufacturerChoosen = true;
+      this.iconService.manufacturerChoosen = true;
     }
   }
 
   ModelChange(event: any) {
     if (event) {
-        this.selectedModel = event.value;
-      if (this.selectedModel && this.selectedModel.years) {
+        this.iconService.selectedModel = event.value;
+      if (this.iconService.selectedModel && this.iconService.selectedModel.years) {
         let newYears = [];
-        this.selectedModel.years.forEach(year => {
+        this.iconService.selectedModel.years.forEach(year => {
         if (year !== 'hybrid') {
           newYears.push(year);
         }
     });
-      this.selectedModel.years = newYears;
+      this.iconService.selectedModel.years = newYears;
     }
-      this.modelChoosen = true;
+      this.iconService.modelChoosen = true;
     }
   }
 
@@ -139,160 +126,161 @@ constructor(private router: Router, private iconService: IconServiceService) {}
 
 
   initModels() {
-    if (!this.selectedManufacturer) {
+    if (!this.iconService.selectedManufacturer) {
     return;
     }
-    switch (this.selectedManufacturer) {
+    switch (this.iconService.selectedManufacturer) {
     case "אאודי":
-    this.selectedModelJson = this.carsJson.audi;
-    this.vehicle.manufacturer = 'audi';
+    this.iconService.selectedModelJson = this.iconService.carsJson.audi;
+    this.iconService.vehicle.manufacturer = 'audi';
     break;
     case "אופל":
-    this.selectedModelJson = this.carsJson.opel;
-    this.vehicle.manufacturer = 'opel';
+    this.iconService.selectedModelJson = this.iconService.carsJson.opel;
+    this.iconService.vehicle.manufacturer = 'opel';
     break;
     case "אלפא רומיאו":
-    this.selectedModelJson = this.carsJson.alpha;
-    this.vehicle.manufacturer = 'alpha';
+    this.iconService.selectedModelJson = this.iconService.carsJson.alpha;
+    this.iconService.vehicle.manufacturer = 'alpha';
     break;
     case "ב.מ.וו":
-    this.selectedModelJson = this.carsJson.bmw;
-    this.vehicle.manufacturer = 'bmw';
+    this.iconService.selectedModelJson = this.iconService.carsJson.bmw;
+    this.iconService.vehicle.manufacturer = 'bmw';
     break;
     case "ג'יפ / Jeep":
-    this.selectedModelJson = this.carsJson.jeep;
-    this.vehicle.manufacturer = 'jeep';
+    this.iconService.selectedModelJson = this.iconService.carsJson.jeep;
+    this.iconService.vehicle.manufacturer = 'jeep';
     break;
     case "דאצ'יה":
-    this.selectedModelJson = this.carsJson.dacia;
-    this.vehicle.manufacturer = 'dacia';
+    this.iconService.selectedModelJson = this.iconService.carsJson.dacia;
+    this.iconService.vehicle.manufacturer = 'dacia';
     break;      
     case "דייהו":
-    this.selectedModelJson = this.carsJson.daewoo;
-    this.vehicle.manufacturer = 'daewoo';
+    this.iconService.selectedModelJson = this.iconService.carsJson.daewoo;
+    this.iconService.vehicle.manufacturer = 'daewoo';
     break;
     case "דייהטסו":
-    this.selectedModelJson = this.carsJson.dayatsu;
-    this.vehicle.manufacturer = 'dayatsu';
+    this.iconService.selectedModelJson = this.iconService.carsJson.dayatsu;
+    this.iconService.vehicle.manufacturer = 'dayatsu';
     break;
     case "הונדה":
-    this.selectedModelJson = this.carsJson.honda;
-    this.vehicle.manufacturer = 'honda';
+    this.iconService.selectedModelJson = this.iconService.carsJson.honda;
+    this.iconService.vehicle.manufacturer = 'honda';
     break;
     case "וולוו":
-    this.selectedModelJson = this.carsJson.volvo;
-    this.vehicle.manufacturer = 'volvo';
+    this.iconService.selectedModelJson = this.iconService.carsJson.volvo;
+    this.iconService.vehicle.manufacturer = 'volvo';
     break;
     case "טויוטה":
-    this.selectedModelJson = this.carsJson.toyota;
-    this.vehicle.manufacturer = 'toyota';
+    this.iconService.selectedModelJson = this.iconService.carsJson.toyota;
+    this.iconService.vehicle.manufacturer = 'toyota';
     break;
     case "יונדאי":
-    this.selectedModelJson = this.carsJson.hunday;
-    this.vehicle.manufacturer = 'hunday';
+    this.iconService.selectedModelJson = this.iconService.carsJson.hunday;
+    this.iconService.vehicle.manufacturer = 'hunday';
     break; 
     case"מאזדה":
-    this.selectedModelJson = this.carsJson.mazda;
-    this.vehicle.manufacturer = 'mazda';
+    this.iconService.selectedModelJson = this.iconService.carsJson.mazda;
+    this.iconService.vehicle.manufacturer = 'mazda';
     break;
     case"מיני":
-    this.selectedModelJson = this.carsJson.mini;
-    this.vehicle.manufacturer = 'mini';
+    this.iconService.selectedModelJson = this.iconService.carsJson.mini;
+    this.iconService.vehicle.manufacturer = 'mini';
     break;
     case "מיצובישי":
-    this.selectedModelJson = this.carsJson.mistubishi;
-    this.vehicle.manufacturer = 'mitsubishi';
+    this.iconService.selectedModelJson = this.iconService.carsJson.mistubishi;
+    this.iconService.vehicle.manufacturer = 'mitsubishi';
     break;
     case "מרצדס":
-    this.selectedModelJson = this.carsJson.mercedes;
-    this.vehicle.manufacturer = 'mercedes';
+    this.iconService.selectedModelJson = this.iconService.carsJson.mercedes;
+    this.iconService.vehicle.manufacturer = 'mercedes';
     break;
     case "ניסאן":
-    this.selectedModelJson = this.carsJson.nissan;
-    this.vehicle.manufacturer = 'nissan';
+    this.iconService.selectedModelJson = this.iconService.carsJson.nissan;
+    this.iconService.vehicle.manufacturer = 'nissan';
     break;
     case "סובארו":
-    this.selectedModelJson = this.carsJson.subaru;
-    this.vehicle.manufacturer = 'subaru';
+    this.iconService.selectedModelJson = this.iconService.carsJson.subaru;
+    this.iconService.vehicle.manufacturer = 'subaru';
     break;
     case "סוזוקי":
-    this.selectedModelJson = this.carsJson.suzuki;
-    this.vehicle.manufacturer = 'suzuki';
+    this.iconService.selectedModelJson = this.iconService.carsJson.suzuki;
+    this.iconService.vehicle.manufacturer = 'suzuki';
     break;
     case "סיאט":
-    this.selectedModelJson = this.carsJson.seat;
-    this.vehicle.manufacturer = 'seat';
+    this.iconService.selectedModelJson = this.iconService.carsJson.seat;
+    this.iconService.vehicle.manufacturer = 'seat';
     break;
     case "סיטרואן":
-    this.selectedModelJson = this.carsJson.citroen;
-    this.vehicle.manufacturer = 'citroen';
+    this.iconService.selectedModelJson = this.iconService.carsJson.citroen;
+    this.iconService.vehicle.manufacturer = 'citroen';
     break;
     case "סמארט":
-    this.selectedModelJson = this.carsJson.smart;
-    this.vehicle.manufacturer = 'smart';
+    this.iconService.selectedModelJson = this.iconService.carsJson.smart;
+    this.iconService.vehicle.manufacturer = 'smart';
     break;
     case "סקודה":
-    this.selectedModelJson = this.carsJson.skoda;
-    this.vehicle.manufacturer = 'skoda';
+    this.iconService.selectedModelJson = this.iconService.carsJson.skoda;
+    this.iconService.vehicle.manufacturer = 'skoda';
     break;
     case "פולקסווגן":
-    this.selectedModelJson = this.carsJson.wolswagen;
-    this.vehicle.manufacturer = 'wolswagen';
+    this.iconService.selectedModelJson = this.iconService.carsJson.wolswagen;
+    this.iconService.vehicle.manufacturer = 'wolswagen';
     break;
     case "פורד":
-    this.selectedModelJson = this.carsJson.ford;
-    this.vehicle.manufacturer = 'ford';
+    this.iconService.selectedModelJson = this.iconService.carsJson.ford;
+    this.iconService.vehicle.manufacturer = 'ford';
     break;
     case "פיאט":
-    this.selectedModelJson = this.carsJson.fiat;
-    this.vehicle.manufacturer = 'fiat';
+    this.iconService.selectedModelJson = this.iconService.carsJson.fiat;
+    this.iconService.vehicle.manufacturer = 'fiat';
     break;
     case "פיג'ו":
-    this.selectedModelJson = this.carsJson.peugeot;
-    this.vehicle.manufacturer = 'peugeot';
+    this.iconService.selectedModelJson = this.iconService.carsJson.peugeot;
+    this.iconService.vehicle.manufacturer = 'peugeot';
     break;
     case "קיה":
-    this.selectedModelJson = this.carsJson.kia;
-    this.vehicle.manufacturer = 'kia';
+    this.iconService.selectedModelJson = this.iconService.carsJson.kia;
+    this.iconService.vehicle.manufacturer = 'kia';
     break;
     case "קרייזלר":
-    this.selectedModelJson = this.carsJson.crysler;
-    this.vehicle.manufacturer = 'crysler';
+    this.iconService.selectedModelJson = this.iconService.carsJson.crysler;
+    this.iconService.vehicle.manufacturer = 'crysler';
     break;
     case "רובר":
-    this.selectedModelJson = this.carsJson.rover;
-    this.vehicle.manufacturer = 'rover';
+    this.iconService.selectedModelJson = this.iconService.carsJson.rover;
+    this.iconService.vehicle.manufacturer = 'rover';
     break;
     case "רנו":
-    this.selectedModelJson = this.carsJson.renault;
-    this.vehicle.manufacturer = 'renault';
+    this.iconService.selectedModelJson = this.iconService.carsJson.renault;
+    this.iconService.vehicle.manufacturer = 'renault';
     break;
     case "שברולט":
-    this.selectedModelJson = this.carsJson.chevrolet;
-    this.vehicle.manufacturer = 'chevrolet';
+    this.iconService.selectedModelJson = this.iconService.carsJson.chevrolet;
+    this.iconService.vehicle.manufacturer = 'chevrolet';
     break;
     }
   }
 
   YearChange(event: any) {
     if (event && event.value) {
-      this.buttonClicked = true;
+      this.iconService.buttonClicked = true;
     }
   }
 
   SearchCar() {
-    let index = this.selectedModel.years.indexOf(this.selectedYear);
-    this.vehicle.iconsNumber = this.selectedModel.icons[index];
-    if (this.selectedYear.includes('+')) {
-    this.vehicle.isSingleYear = true;
+    let index = this.iconService.selectedModel.years.indexOf(this.iconService.selectedYear);
+    this.iconService.vehicle.iconsNumber = this.iconService.selectedModel.icons[index];
+    if (this.iconService.selectedYear.includes('+')) {
+    this.iconService.vehicle.isSingleYear = true;
     }
-    this.vehicle.vehicleYear = this.selectedYear;
-    if (this.selectedYear.includes('h')) {
-    this.vehicle.isHybrid = true;
+    this.iconService.vehicle.vehicleYear = this.iconService.selectedYear;
+    if (this.iconService.selectedYear.includes('h')) {
+    this.iconService.vehicle.isHybrid = true;
     }
-    this.vehicle.vehicleType = this.selectedModel.englishModelName;
-    this.iconService.searchCar(this.vehicle);
+    this.iconService.vehicle.vehicleType = this.iconService.selectedModel.englishModelName;
+    this.iconService.searchCar(this.iconService.vehicle);
     this.router.navigateByUrl('icons');
+
   }
 
 }

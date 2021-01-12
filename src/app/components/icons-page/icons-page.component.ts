@@ -18,4 +18,8 @@ export class IconsPageComponent implements OnInit {
     }
   }
 
+  Back() {
+    this.router.navigateByUrl('main');
+  }
+
 }
