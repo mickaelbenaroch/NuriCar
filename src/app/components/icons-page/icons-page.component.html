@@ -2,6 +2,9 @@
 <div class="div-1">
     <span>לחץ על הנורה שנדלקה לך כדי לקבל יותר פרטים על משמעותה</span>
 </div>
+<div class="arrow-div">
+    <img class="arrow" (click)="Back()" src="/assets/nuricar/left_arrow.png"/> 
+  </div>
 <div class="envelop" *ngIf="iconService && iconService.imagesPathArray">
     <div class="icon-div" *ngFor="let icon of iconService.imagesPathArray">
         <img class="icon" [src]="icon"/>

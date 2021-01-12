@@ -286,10 +286,10 @@ constructor(private router: Router, private iconService: IconServiceService) {}
     if (this.selectedYear.includes('+')) {
     this.vehicle.isSingleYear = true;
     }
-    if (this.selectedModel.isHybrid) {
+    this.vehicle.vehicleYear = this.selectedYear;
+    if (this.selectedYear.includes('h')) {
     this.vehicle.isHybrid = true;
     }
-    this.vehicle.vehicleYear = this.selectedYear;
     this.vehicle.vehicleType = this.selectedModel.englishModelName;
     this.iconService.searchCar(this.vehicle);
     this.router.navigateByUrl('icons');

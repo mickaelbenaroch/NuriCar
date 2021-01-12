@@ -1,26 +1,34 @@
 .div-1 {
     text-align: center;
-    font-size: 28px;
+    font-size: 20px;    
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Assistant', sans-serif;
     padding: 1.5rem;
     line-height: initial;
-
+}
+.arrow-div {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 15px;
+    .arrow {
+        width: 45px;
+        height: 45px;
+    }
 }
 .envelop {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 3rem;
-    padding-top: 1.3rem;
+    padding: 1rem;
+    padding-top: 0px;
     .icon-div {
         border-radius: 2px;
         margin: 15px;
         cursor: pointer;
         .icon {
-            border-radius: 50%;
-            height: 100px;
-            width: 100px;
+            border-radius: 10px;
+            height: 50px;
+            width: 55px;
             cursor: pointer;
         }
     }
