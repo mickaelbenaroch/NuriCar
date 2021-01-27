@@ -1,9 +1,9 @@
-import {Car} from './car'
+import {Car} from './Car'
 
 export class Cars {
     public mazda: Car[] = [
         {value: "1", modelName: "2", years: ['2007-2015','2015+'], icons: [28, 57], isHybrid: false, englishModelName: '2'},
-        {value: "2", modelName: "3", years: ['2004-2008', '2009-2012', '2013+'], icons: [20, 29, 61], isHybrid: false, englishModelName: '3'},
+        {value: "2", modelName: "3", years: ['2004-2008', '2009-2012', '2013+', '2020+'], icons: [20, 29, 61, 56], isHybrid: false, englishModelName: '3'},
         {value: "3", modelName: "5", years: ['2006-2010','2011-2017'], icons: [21, 25], isHybrid: false, englishModelName: '5'},    
         {value: "4", modelName: "6", years: ['2003-2008','2009-2012','2013+'], icons: [20, 25, 67], isHybrid: false, englishModelName: '6'},
         {value: "5", modelName: "626", years: ['1998-2002'], icons: [17], isHybrid: false, englishModelName: '626'},
@@ -14,19 +14,19 @@ export class Cars {
         {value: "10", modelName: "mx5", years: ['2000-2008','2009-2014','2015+'], icons: [22, 21, 46], isHybrid: false, englishModelName: 'mx5'}     
       ];
       public toyota: Car[] = [
-        {value: "1", modelName: "אוריס", years: ['2008-2012','2013-2015','2016-2017','hybrid','2008-2011h', '2012-2014h', '2015-2018h'], icons: [27, 43, 52, 33, 60, 58], isHybrid: true, englishModelName: 'auris'},
-        {value: "2", modelName: "אבנסיס", years: ['2009-2012', '2013-2015', '2016-2019'], icons: [25, 35, 38], isHybrid: false, englishModelName: 'avensis'},
-        {value: "3", modelName: "אייגו", years: ['2012-2014','2015-2017','2018post'], icons: [20, 39, 40], isHybrid: false, englishModelName: 'aygo'},    
-        {value: "4", modelName: "קמרי", years: ['2002-2006','2007-2012','2013-2014','2015-2017', '2018-2020', 'hybrid', '2007-2011h', '2012-2014h', '2015-2017h', '2018-2020h'], icons: [25, 32, 36, 37, 51, 28, 35, 34, 56], isHybrid: true, englishModelName: 'camry'},
         {value: "5", modelName: "CHR", years: ['2016post', 'hybrid', '2016posth'], icons: [55, 61], isHybrid: false, englishModelName: 'chr'},
-        {value: "6", modelName: "קורולה", years: ['2003-2007', '2008-2012', '2013-2018', '2019post', 'hybrid', '2020post'], icons: [25, 42, 62, 63, 59], isHybrid: true, englishModelName: 'corolla'},
         {value: "7", modelName: "אבלון", years: ['2005-2012', '2013-2018', '2019-2020', 'hybrid', '2013-2016h', '2017-2018h', '2019-2020h'], icons: [34, 35, 53, 51, 33, 36], isHybrid: true, englishModelName: 'evlon'},
+        {value: "2", modelName: "אבנסיס", years: ['2009-2012', '2013-2015', '2016-2019'], icons: [25, 35, 38], isHybrid: false, englishModelName: 'avensis'},
+        {value: "1", modelName: "אוריס", years: ['2008-2012','2013-2015','2016-2017','hybrid','2008-2011h', '2012-2014h', '2015-2018h'], icons: [27, 43, 52, 33, 60, 58], isHybrid: true, englishModelName: 'auris'},
+        {value: "3", modelName: "אייגו", years: ['2012-2014','2015-2017','2018post'], icons: [20, 39, 40], isHybrid: false, englishModelName: 'aygo'},    
         {value: "8", modelName: "איילנדר", years: ['2011-2013', '2014-2016', '2017-2019', '2020post', 'hybrid', '2011-2013h', '2014-2016h', '2017-2019h', '2020posth'], icons: [31, 35, 42, 54, 30, 38, 41, 52 ], isHybrid: true, englishModelName: 'highlander'},
-        {value: "9", modelName: "לנד קרוזר", years: ['2009-2013', '2014-2016', '2017post'], icons: [44, 55, 65], isHybrid: false, englishModelName: 'landcruiser'},
-        {value: "10", modelName: "פריוס", years: ['2005-2009','2010-2015','2016-2018', '2019-2020'], icons: [34, 38, 53, 55], isHybrid: false, englishModelName: 'prius'},
-        {value: "11", modelName: "ראב 4", years: ['2006-2012','2013-2015','2016-2018', '2019post', 'hybrid', '2016-2018h', '2019posth'], icons: [33, 43, 49, 55, 42, 53], isHybrid: true, englishModelName: 'rav4'},
         {value: "12", modelName: "וורסו", years: ['2009-2013','2014-2018'], icons: [27, 37], isHybrid: false, englishModelName: 'verso'},
         {value: "13", modelName: "יאריס", years: ['2009-2012','2013-2014','2015-2017', '2018-2019', 'hybrid', '2012-2014h', '2015-2017h', '2018-2019h'], icons: [31, 32, 37, 56, 41, 40, 53], isHybrid: true, englishModelName: 'yaris'},
+        {value: "9", modelName: "לנד קרוזר", years: ['2009-2013', '2014-2016', '2017post'], icons: [44, 55, 65], isHybrid: false, englishModelName: 'landcruiser'},
+        {value: "10", modelName: "פריוס", years: ['2005-2009','2010-2015','2016-2018', '2019-2020'], icons: [34, 38, 53, 55], isHybrid: false, englishModelName: 'prius'},
+        {value: "6", modelName: "קורולה", years: ['2003-2007', '2008-2012', '2013-2018', '2019post', 'hybrid', '2020post'], icons: [25, 42, 62, 63, 59], isHybrid: true, englishModelName: 'corolla'},
+        {value: "4", modelName: "קמרי", years: ['2002-2006','2007-2012','2013-2014','2015-2017', '2018-2020', 'hybrid', '2007-2011h', '2012-2014h', '2015-2017h', '2018-2020h'], icons: [25, 32, 36, 37, 51, 28, 35, 34, 56], isHybrid: true, englishModelName: 'camry'},
+        {value: "11", modelName: "ראב 4", years: ['2006-2012','2013-2015','2016-2018', '2019post', 'hybrid', '2016-2018h', '2019posth'], icons: [33, 43, 49, 55, 42, 53], isHybrid: true, englishModelName: 'rav4'},
       ];
       public alpha: Car[] = [];
       public audi: Car[] = [];
@@ -42,7 +42,23 @@ export class Cars {
       public honda: Car[] = [];
       public hunday: Car[] = [];
       public jeep: Car[] = [];
-      public kia: Car[] = [];
+      public kia: Car[] = [
+        {value: "6", modelName: "אופטימה", years: ['2012-2015','2016-2019', '2020post', 'hybrid', '2016-2019h', '2020posth'], icons: [29, 29, 26, 42, 35 ], isHybrid: true, englishModelName: 'optima'},
+        {value: "15", modelName: "אקסיד", years: ['2019post'], icons: [34], isHybrid: false, englishModelName: 'xceed'},
+        {value: "5", modelName: "נירו", years: ['2016-2020','2020post'], icons: [39, 33], isHybrid: false, englishModelName: 'niro'},
+        {value: "11", modelName: "סול", years: ['2011-2013','2014-2018'], icons: [31, 34], isHybrid: false, englishModelName: 'soul'},
+        {value: "10", modelName: "סורנטו", years: ['2003-2009','2010-2014','2015-2020', '2021post'], icons: [22, 32, 32, 33], isHybrid: false, englishModelName: 'sorento'},
+        {value: "14", modelName: "סטוניק", years: ['2018post'], icons: [35], isHybrid: false, englishModelName: 'stonic'},
+        {value: "13", modelName: "סטינגר", years: ['2018post'], icons: [29], isHybrid: false, englishModelName: 'stinger'},
+        {value: "3", modelName: "סיד", years: ['2008-2009','2010-2012', '2013-2018', '2019-2020', 'hybrid', '2019posth'], icons: [25, 33, 32, 33, 35], isHybrid: true, englishModelName: 'ceed'},
+        {value: "9", modelName: "סלטוס", years: ['2020post'], icons: [30], isHybrid: false, englishModelName: 'seltos'},
+        {value: "12", modelName: "ספורטאז'", years: ['2008-2010','2011-2015','2016-2020','2020post'], icons: [31, 30, 30, 32], isHybrid: false, englishModelName: 'sportage'},
+        {value: "4", modelName: "פורטה", years: ['2009-2012','2013-2016', '2017-2018', '2019-2021'], icons: [23, 26, 32, 34], isHybrid: false, englishModelName: 'forte'},
+        {value: "7", modelName: "פיקנטו", years: ['2011-2016','2017-2020', '2020post'], icons: [40, 27, 35], isHybrid: false, englishModelName: 'picanto'},
+        {value: "1", modelName: "קארנס", years: ['2007-2012','2013-2019'], icons: [30, 38], isHybrid: false, englishModelName: 'carens'},
+        {value: "2", modelName: "קרניבל", years: ['2007-2012','2015-2020'], icons: [27, 36], isHybrid: false, englishModelName: 'carnival'},
+        {value: "8", modelName: "ריו", years: ['2006-2011','2012-2017', '2018-2021', '2021post'], icons: [18, 27, 26, 27], isHybrid: false, englishModelName: 'rio'},
+      ];
       public mercedes: Car[] = [];
       public mini: Car[] = [];
       public mistubishi: Car[] = [];

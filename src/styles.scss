@@ -5,7 +5,13 @@ html, body {
     background-image: url("/assets/nuricar/bg_body.png");
     background-repeat: no-repeat;
     background-size: cover;
-    min-height: 100% !important;
+}
+
+@media only screen and (max-width: 600px) {
+    html, body { 
+        min-height: 100% !important;
+        height: 100% !important;
+    }
 }
 
 /* Importing Bootstrap SCSS file. */

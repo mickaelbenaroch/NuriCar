@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IconLevel } from './enums/icon-level';
-import { Icon } from './models/icon';
+import { Icon } from './models/Icon';
 import { IconServiceService } from './services/icon-service.service';
 
 @Component({
@@ -40,11 +40,7 @@ export class AppComponent implements OnInit{
     this.iconService.iconDescriptionJson.push(new Icon("בלם יד", "מסמן שבלם היד (הנד-ברייקס) מורם ", "יש להוריד את בלם היד (הנד-ברייקס)", null, IconLevel.Red, null));
     this.iconService.iconDescriptionJson.push(new Icon("בלם יד", "מסמן שבלם היד (הנד-ברייקס) מורם ", "יש להוריד את בלם היד (הנד-ברייקס)", null, IconLevel.Red, null));
     this.iconService.iconDescriptionJson.push(new Icon("בלם יד", "מסמן שבלם היד (הנד-ברייקס) מורם ", "יש להוריד את בלם היד (הנד-ברייקס)", null, IconLevel.Red, null));
-    this.iconService.iconDescriptionJson.push(new Icon("ווינקר מופעל", "מסמן שאחד מהווינקרים לפחות מופעל ", "יש לכבות את הווינקרים הדלוקים אם אין צורך בהם", null, IconLevel.Green, null));
-
-
-  
-  
+    this.iconService.iconDescriptionJson.push(new Icon("ווינקר מופעל", "מסמן שאחד מהווינקרים לפחות מופעל ", "יש לכבות את הווינקרים הדלוקים אם אין צורך בהם", null, IconLevel.Green, null));  
   }
 
 }
