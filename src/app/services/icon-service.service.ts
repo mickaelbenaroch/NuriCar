@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { VehiculeEntity } from '../models/VehiculeModel';
-import {Icon} from '../models/Icon'
 import { Cars } from '../models/Cars';
+import { Icon } from '../models/Icon';
 import { Car } from '../models/Car';
 
 @Injectable({
