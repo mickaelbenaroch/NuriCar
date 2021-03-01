@@ -22,6 +22,7 @@ export class IconServiceService {
   public carsJson = new Cars();
   public selectedModelJson = new Array<Car>();
   public vehicle = new VehiculeEntity();
+  public focusedIcon; 
 
   constructor() { }
 

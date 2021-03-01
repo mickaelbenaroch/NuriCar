@@ -12,7 +12,7 @@ export class Icon {
 
     public suggestion: string;
 
-    public more: any;
+    public more: string[] = [];
 
     constructor(title, description, suggestion, path, severity, more) {
         this.title = title;

@@ -1,0 +1,13 @@
+
+<div class="div-1">
+    <span>לחץ על הנורה שנדלקה לך כדי לקבל יותר פרטים על משמעותה</span>
+</div>
+<div class="arrow-div">
+    <img class="arrow" (click)="Back()" src="/assets/nuricar/left_arrow.png"/> 
+  </div>
+<div class="envelopIconFocusPage">
+    <img src="{{iconService.focusedIcon}}" />
+</div>
+<div class="desc-div" *ngIf="icon">
+    <p class="desc">{{icon.Description}}</p>
+</div>

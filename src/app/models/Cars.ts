@@ -40,7 +40,24 @@ export class Cars {
       public fiat: Car[] = [];
       public ford: Car[] = [];
       public honda: Car[] = [];
-      public hunday: Car[] = [];
+      public hunday: Car[] = [
+        {value: "1", modelName: "גטס", years: ['2001post'], icons: [22], isHybrid: false, englishModelName: 'getz'},
+        {value: "2", modelName: "i10", years: ['2009-2013', '2014-2019', '2020post'], icons: [24, 34, 31], isHybrid: false, englishModelName: 'i10'},
+        {value: "3", modelName: "i20", years: ['2009-2014', '2015-2019', '2020post'], icons: [27, 30, 34], isHybrid: false, englishModelName: 'i20'},
+        {value: "4", modelName: "i25 אקסנט", years: ['2007-2011', '2012-2018', '2019post'], icons: [22, 28, 27], isHybrid: false, englishModelName: 'i25_accent'},
+        {value: "5", modelName: "i30", years: ['2008-2011', '2012-2017', '2018post'], icons: [40, 29, 39], isHybrid: false, englishModelName: 'i30'},
+        {value: "6", modelName: "i35 אלנטרה", years: ['2011-2015', '2016-2018', '2019post'], icons: [28, 37, 33], isHybrid: false, englishModelName: 'i35_alentra'},
+        {value: "7", modelName: "i40", years: ['2011-2015'], icons: [37], isHybrid: false, englishModelName: 'i40'},
+        {value: "8", modelName: "איוניק", years: ['2016-2019', '2020post', 'hybrid', '2016-2019h', '2020posth'], icons: [37, 34, 39, 34], isHybrid: true, englishModelName: 'ionic'},
+        {value: "9", modelName: "ix35 טוסון", years: ['2010-2016'], icons: [32], isHybrid: false, englishModelName: 'ix35_tucson'},
+        {value: "10", modelName: "קונה", years: ['2017post', 'hybrid', '2020posth'], icons: [43, 33], isHybrid: true, englishModelName: 'kone'},
+        {value: "11", modelName: "סנטה פה", years: ['2007-2012', '2013-2018', '2019post'], icons: [25, 46, 33], isHybrid: false, englishModelName: 'santafe'},
+        {value: "12", modelName: "סונטה", years: ['2006-2011', 'hybrid', '2015-2018h', '2018-2019h', '2020posth'], icons: [21, 40, 39, 30], isHybrid: true, englishModelName: 'sonte'},
+        {value: "13", modelName: "טראקאן", years: ['2001-2007'], icons: [25], isHybrid: false, englishModelName: 'tarken'},
+        {value: "14", modelName: "טוסון", years: ['2005-2010', '2015-2019', '2019post'], icons: [25, 29, 28], isHybrid: false, englishModelName: 'tucson'},
+        {value: "15", modelName: "ולוסטר", years: ['2011-2016'], icons: [35], isHybrid: false, englishModelName: 'veloster'},
+        {value: "16", modelName: "וניו", years: ['2020post'], icons: [25], isHybrid: false, englishModelName: 'venio'},
+      ];
       public jeep: Car[] = [];
       public kia: Car[] = [
         {value: "6", modelName: "אופטימה", years: ['2012-2015','2016-2019', '2020post', 'hybrid', '2016-2019h', '2020posth'], icons: [29, 29, 26, 42, 35 ], isHybrid: true, englishModelName: 'optima'},

@@ -14,12 +14,14 @@ import { FormsModule } from '@angular/forms';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { HybridPipe } from './pipes/hybrid.pipe';
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
+import { FocusedIconComponent } from './components/focused-icon/focused-icon.component';
 
 
 const appRoutes: Routes = [
   { path: '' , component: SplashScreenComponent},
   { path: 'main' , component: MainPageComponent},
-  { path: 'icons' , component: IconsPageComponent}
+  { path: 'icons' , component: IconsPageComponent},
+  { path: 'focus', component: FocusedIconComponent}
 ];
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     IconsPageComponent,
     MainPageComponent,
     HybridPipe,
-    SplashScreenComponent
+    SplashScreenComponent,
+    FocusedIconComponent
   ],
   imports: [
     BrowserModule,

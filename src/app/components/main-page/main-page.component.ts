@@ -1,4 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { AfterContentInit, AfterViewChecked, AfterViewInit, Component, DoCheck, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IconServiceService } from 'src/app/services/icon-service.service';
 
@@ -7,7 +7,7 @@ import { IconServiceService } from 'src/app/services/icon-service.service';
   templateUrl: './main-page.component.html',
   styleUrls: ['./main-page.component.scss']
 })
-export class MainPageComponent implements OnInit {
+export class MainPageComponent implements OnInit{
 
     images = [
       '/assets/symbols/audi.png', 
@@ -93,6 +93,13 @@ constructor(private router: Router, public iconService: IconServiceService) {}
     }
     if (currentUrl === '/icons' && !this.iconService.buttonClicked) {
     this.router.navigateByUrl('');
+    }
+    let htmlHeight = document.getElementsByTagName('html')[0].offsetHeight;
+    let envelopMainPageHeight = (document.getElementsByClassName('envelopMainPage')[0] as HTMLElement).offsetHeight;
+    if (htmlHeight < envelopMainPageHeight) {
+      document.getElementsByTagName('html')[0].style.height = "unset";
+    } else {
+      document.getElementsByTagName('html')[0].style.height = "100%";
     }
   }
 

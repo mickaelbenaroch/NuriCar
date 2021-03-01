@@ -5,8 +5,8 @@
 <div class="arrow-div">
     <img class="arrow" (click)="Back()" src="/assets/nuricar/left_arrow.png"/> 
   </div>
-<div class="envelop" *ngIf="iconService && iconService.imagesPathArray">
-    <div class="icon-div" *ngFor="let icon of iconService.imagesPathArray">
+<div class="envelopIconPage" *ngIf="iconService && iconService.imagesPathArray">
+    <div class="icon-div" *ngFor="let icon of iconService.imagesPathArray" (click)="IconClicked(icon)">
         <img class="icon" [src]="icon"/>
     </div>
 </div>
