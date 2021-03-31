@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, DoCheck, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { IconServiceService} from 'src/app/services/icon-service.service'
 
@@ -7,16 +7,23 @@ import { IconServiceService} from 'src/app/services/icon-service.service'
   templateUrl: './icons-page.component.html',
   styleUrls: ['./icons-page.component.scss']
 })
-export class IconsPageComponent implements OnInit, AfterViewInit {
+export class IconsPageComponent implements OnInit, DoCheck {
 
   constructor(public iconService: IconServiceService,
               public router: Router) { }
-  ngAfterViewInit(): void {
-    let htmlHeight = document.getElementsByTagName('html')[0].offsetHeight;
-    let envelopMainPageHeight = (document.getElementsByClassName('envelopIconPage')[0] as HTMLElement).offsetHeight;
-    if (htmlHeight < envelopMainPageHeight) {
-      document.getElementsByTagName('html')[0].style.height = "unset";
-    }
+  ngDoCheck(): void {
+    setTimeout(() => {
+      let htmlHeight = document.getElementsByTagName('html')[0].offsetHeight;
+      let envelopMainPageHeightFirst = (document.getElementsByClassName('envelopIconPage')[0] as HTMLElement);
+      let envelopMainPageHeight;
+      if  (envelopMainPageHeightFirst) {
+        envelopMainPageHeight = envelopMainPageHeightFirst.offsetHeight;
+        if (htmlHeight < (envelopMainPageHeight + 100)) {
+          document.getElementsByTagName('html')[0].style.height = "unset";
+          document.getElementsByTagName('body')[0].style.height = "unset";
+        }
+      };
+    }, 1000);
   }
 
   ngOnInit(): void {
