@@ -1,5 +1,5 @@
-import {VehiculeEntity} from '../models/vehiculeModel';
-import {Cars} from '../models/cars';
+import {VehiculeEntity} from '../../app/models/VehiculeModel';
+import {Cars} from '../../app/models/Cars';
 import {Injectable} from '@angular/core';
 import {Icon} from '../models/icon';
 import {Car} from '../models/car';
