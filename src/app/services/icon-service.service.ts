@@ -1,8 +1,8 @@
-import { Injectable } from '@angular/core';
-import { VehiculeEntity } from '../models/vehiculeModel';
-import { Cars } from '../models/cars';
-import { Icon } from '../models/icon';
-import { Car } from '../models/car';
+import {Injectable} from '@angular/core';
+import {VehiculeEntity} from '../models/vehiculeModel';
+import {Cars} from '../models/cars';
+import {Icon} from '../models/icon';
+import {Car} from '../models/car';
 
 @Injectable({
   providedIn: 'root'
