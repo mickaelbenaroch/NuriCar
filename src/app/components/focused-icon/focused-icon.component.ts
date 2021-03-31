@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Icon } from 'src/app/models/Icon';
+import { Icon } from 'src/app/models/icon';
 import { IconServiceService } from 'src/app/services/icon-service.service';
 
 @Component({

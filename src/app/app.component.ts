@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { IconLevel } from './enums/icon-level';
-import { Icon } from './models/Icon';
+import { Icon } from './models/icon';
 import { IconServiceService } from './services/icon-service.service';
 
 @Component({

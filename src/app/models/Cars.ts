@@ -1,4 +1,4 @@
-import { Car } from "./Car";
+import { Car } from "./car";
 
 export class Cars {
     public mazda: Car[] = [
