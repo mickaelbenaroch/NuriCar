@@ -1,5 +1,7 @@
 import {Injectable} from '@angular/core';
+// @ts-ignore 
 import {VehiculeEntity} from '../models/vehiculeModel';
+// @ts-ignore 
 import {Cars} from '../models/cars';
 import {Icon} from '../models/icon';
 import {Car} from '../models/car';
