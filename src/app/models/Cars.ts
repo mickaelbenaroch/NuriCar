@@ -82,7 +82,7 @@ export class Cars {
       public nissan: Car[] = [
         {value: "1", modelName: "אלמרה", years: ['2015-2016'], icons: [28], isHybrid: false, englishModelName: 'almera'},
         {value: "2", modelName: "אלטימה", years: ['2013-2015', '2016-2019', '2020post'], icons: [20, 21, 29], isHybrid: false, englishModelName: 'altima'},
-        {value: "3", modelName: "דיוק", years: ['2010-2019'], icons: [31], isHybrid: false, englishModelName: 'duke'},
+        {value: "3", modelName: "ג'וק", years: ['2010-2019'], icons: [31], isHybrid: false, englishModelName: 'duke'},
         {value: "4", modelName: "קשקאי", years: ['2014-2016', '2017post'], icons: [35, 27], isHybrid: false, englishModelName: 'kashkai'},
         {value: "5", modelName: "ליף", years: ['2020'], icons: [34], isHybrid: false, englishModelName: 'leaf'},
         {value: "6", modelName: "מקסימה", years: ['2009-2015', '2016post'], icons: [24, 23], isHybrid: false, englishModelName: 'maxima'},
@@ -90,7 +90,7 @@ export class Cars {
         {value: "8", modelName: "מורנו", years: ['2006-2014'], icons: [36], isHybrid: false, englishModelName: 'moreno'},
         {value: "9", modelName: "נוט", years: ['2007-2013', '2014-2017'], icons: [20, 25], isHybrid: false, englishModelName: 'note'},
         {value: "10", modelName: "NV200", years: ['2011post'], icons: [36], isHybrid: false, englishModelName: 'NV200'},
-        {value: "11", modelName: "פאספיינדר", years: ['2014-2015'], icons: [38], isHybrid: false, englishModelName: 'pathfinder'},
+        {value: "11", modelName: "פת, פיינדר", years: ['2014-2015'], icons: [38], isHybrid: false, englishModelName: 'pathfinder'},
         {value: "12", modelName: "סנטרה", years: ['2016-2020','2021post'], icons: [34, 24], isHybrid: false, englishModelName: 'senatra'},
         {value: "13", modelName: "טידה", years: ['2007-2013'], icons: [25], isHybrid: false, englishModelName: 'tida'},
         {value: "14", modelName: "אקסטרייל", years: ['2016-2017','2018post'], icons: [34, 37], isHybrid: false, englishModelName: 'xtrail'},
