@@ -78,7 +78,17 @@ export class Cars {
       ];
       public mercedes: Car[] = [];
       public mini: Car[] = [];
-      public mistubishi: Car[] = [];
+      public mistubishi: Car[] = [
+        {value: "1", modelName: "ASX", years: ['2018-2020', '2020post'], icons: [19, 19], isHybrid: false, englishModelName: 'ASX'},
+        {value: "2", modelName: "אטראז", years: ['2014-2019', '2020post'], icons: [19, 30], isHybrid: false, englishModelName: 'atraz'},
+        {value: "3", modelName: "אקליפס קרוס", years: ['2020post'], icons: [23], isHybrid: false, englishModelName: 'eclipsecross'},
+        {value: "4", modelName: "גרנדיס", years: ['2005-2011'], icons: [22], isHybrid: false, englishModelName: 'grandis'},
+        {value: "5", modelName: "לנסר", years: ['2008-2018'], icons: [21], isHybrid: false, englishModelName: 'lancer'},
+        {value: "6", modelName: "אאוטלנדר", years: ['2008-2013', '2014post'], icons: [19, 36], isHybrid: false, englishModelName: 'outlander'},
+        {value: "7", modelName: "אאוטלנדר PHEV", years: ['2013-2016', '2017post'], icons: [24, 34], isHybrid: false, englishModelName: 'outlanderPHEV'},
+        {value: "8", modelName: "פג'רו", years: ['2008-2018'], icons: [29], isHybrid: false, englishModelName: 'pagero'},
+        {value: "9", modelName: "ספייס סטאר", years: ['2013-2016', '2020post'], icons: [31, 34], isHybrid: false, englishModelName: 'spacestar'},
+      ];
       public nissan: Car[] = [
         {value: "1", modelName: "אלמרה", years: ['2015-2016'], icons: [28], isHybrid: false, englishModelName: 'almera'},
         {value: "2", modelName: "אלטימה", years: ['2013-2015', '2016-2019', '2020post'], icons: [20, 21, 29], isHybrid: false, englishModelName: 'altima'},
