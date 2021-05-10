@@ -1,0 +1,29 @@
+.envelop{
+    display: flex;
+    direction: rtl;
+    font-family: Assistant;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    justify-content: space-between;
+    padding: 1rem;
+    .div-1{
+        width: 5%;
+    }   
+    .div-2{
+        color: black;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .div-3{
+        width: 15%;
+        text-align: left;
+        button{
+            cursor: pointer;
+            color: black;
+            font-weight: bold;
+            border-radius: 3px;
+        }
+    }
+}
