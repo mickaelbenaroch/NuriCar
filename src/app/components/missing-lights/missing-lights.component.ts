@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
-import { HttpService } from '../../services/http.service'
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { HttpService } from '../../services/http.service';
+import { MissingIcon } from '../../models/misssing';
 
 @Component({
   selector: 'app-missing-lights',
@@ -8,10 +10,12 @@ import { HttpService } from '../../services/http.service'
   styleUrls: ['./missing-lights.component.scss']
 })
 export class MissingLightsComponent implements OnInit {
-  private model: any;
+  private model: MissingIcon = new MissingIcon();
   public base64textString: string;
   public text: string;
-  constructor(private httpService: HttpService, private dialog: MatDialogRef<MissingLightsComponent>) { }
+  constructor(private httpService: HttpService, 
+              private dialog: MatDialogRef<MissingLightsComponent>,
+              private ngxService: NgxUiLoaderService) { }
 
   ngOnInit(): void {
   }
@@ -22,9 +26,7 @@ export class MissingLightsComponent implements OnInit {
      const reader = new FileReader();
      reader.onload = (event1: any) => {
        this.base64textString = event1.target.result;
-       this.model = {
-         picture: this.base64textString
-       };
+       this.model.picture = this.base64textString
      };
      reader.readAsDataURL(event.target.files[0]);
   }
@@ -34,28 +36,21 @@ export class MissingLightsComponent implements OnInit {
    this.dialog.close();
  }
  validate() {
-  let obj;
-   if (this.model) {
-    obj = {
-      picture: this.model.picture,
-      text: this.text
-    };
-   } else {
-     obj = {
-       picture: null,
-       text: this.text
-     };
-   }
-  console.log(obj.text);
-  this.httpService.post('icons/missing', obj).subscribe(
-    res =>{
-      this.dialog.close('true');
-    },
-    err =>{
-      console.log(err);
-      this.dialog.close('error');
-    }
-  )
+    this.ngxService.start();
+    this.model.text = this.text;
+    this.model.date = new Date();
+    this.model.isNew = true;
+    this.sendMissingRequest();
  }
-
+sendMissingRequest() {
+  this.httpService.post('icons/missing', this.model).subscribe(
+    res =>{
+      if (res && res.data === true) {
+      this.ngxService.stop();
+      this.dialog.close('true');
+    } else {
+      this.sendMissingRequest();
+    }
+  });
+}
 }

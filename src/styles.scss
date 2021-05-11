@@ -36,7 +36,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         top: 0;
         left: 0;
         right: 0;
-        height: 50px;
+        height: 100px;
+        border-radius: 0px;
     }
 }
 .cdk-overlay-pane.not-r {
@@ -46,6 +47,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
         top: 0;
         left: 0;
         right: 0;
-        height: 50px;
+        height: 100px;
+        border-radius: 0px;
     }
 }

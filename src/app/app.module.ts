@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HybridPipe } from './pipes/hybrid.pipe';
+import { NgxUiLoaderModule } from "ngx-ui-loader";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -50,6 +51,7 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     MatDialogModule,
+    NgxUiLoaderModule
   ],
   providers: [],
   bootstrap: [AppComponent],
