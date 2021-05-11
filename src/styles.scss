@@ -33,9 +33,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     mat-dialog-container {
         background-color: lightgreen;
         position: absolute;
-        top: 0;
+        top: 40%;
         left: 0;
+        width: 90%;
         right: 0;
+        margin: auto;
         height: 100px;
         border-radius: 0px;
     }
@@ -44,9 +46,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     mat-dialog-container {
         background-color: lightcoral;
         position: absolute;
-        top: 0;
+        top: 40%;
         left: 0;
+        width: 90%;
         right: 0;
+        margin: auto;
         height: 100px;
         border-radius: 0px;
     }
