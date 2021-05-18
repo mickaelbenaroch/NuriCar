@@ -1,13 +1,14 @@
 import {VehiculeEntity} from '../../app/models/VehiculeModel';
-import {Cars} from '../../app/models/Cars';
-import {Injectable} from '@angular/core';
+import {Injectable, OnInit} from '@angular/core';
 import {Icon} from '../models/icon';
 import {Car} from '../models/car';
+import { HttpService } from './http.service';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
 
 @Injectable({
   providedIn: 'root'
 })
-export class IconServiceService {
+export class IconServiceService implements OnInit{
 
   vehicleSearched: VehiculeEntity = new VehiculeEntity();
   imagesPathArray: string[] = [];
@@ -19,13 +20,16 @@ export class IconServiceService {
   selectedModel: any;
   selectedYear: string;
   buttonClicked: boolean = false;
-  public carsJson = new Cars();
   public selectedModelJson = new Array<Car>();
   public vehicle = new VehiculeEntity();
   public focusedIcon; 
+  public icons: Icon[] = [];
 
-  constructor() { }
+  constructor(private httpService: HttpService, private ngxService: NgxUiLoaderService) { }
 
+  ngOnInit() {
+    this.getIcons();
+  }
   searchCar(entity: VehiculeEntity): void{
     if (!entity) {
       return;
@@ -40,10 +44,37 @@ export class IconServiceService {
         prefix = prefix + this.vehicleSearched.vehicleYear + '/';
         prefix = prefix.replace('+', 'post');
       } else {
-        prefix = prefix + this.vehicleSearched.vehicleYear + '/';
+          prefix = prefix + this.vehicleSearched.vehicleYear + '/';
+          if (this.vehicleSearched.vehicleYear.includes('-') && this.vehicleSearched.vehicleYear.endsWith('h/')) {
+            prefix = prefix + this.vehicleSearched.vehicleYear + '/';
+            prefix = prefix.slice(0, -1) + 'h/'
+          }
+        if (this.vehicleSearched.isHybrid && prefix.endsWith('posth/') && 
+            this.vehicleSearched.vehicleType !== 'highlander' && 
+            this.vehicleSearched.vehicleType !== 'rav4' &&
+            this.vehicleSearched.vehicleType !== 'ionic' &&
+            this.vehicleSearched.vehicleType !== 'kone' &&
+            this.vehicleSearched.vehicleType !== 'optima' &&
+            this.vehicleSearched.vehicleType !== 'ceed') {
+          prefix = prefix.slice(0, -2) + '/';
+        }
       }
-      for (let i = 1; i < this.vehicleSearched.iconsNumber + 1; i++) {
+      for (let i = 1; i < Number(this.vehicleSearched.iconsNumber) + 1; i++) {
         this.imagesPathArray.push(prefix + 'image' + i + '.png');
       }
+  }
+  getIcons() {
+    this.ngxService.start();
+    this.getIconsApiCall();
+  }
+  getIconsApiCall() {
+    this.httpService.get('icons/icons').subscribe((res: any) => {
+      if (res && res.data) {
+        this.icons = res.data;
+        this.ngxService.stop();
+      } else {
+        this.getIconsApiCall();
+      }
+    });
   }
 }

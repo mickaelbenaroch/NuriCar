@@ -23,7 +23,7 @@ export class IconsPageComponent implements OnInit, DoCheck {
       let envelopMainPageHeight;
       if  (envelopMainPageHeightFirst) {
         envelopMainPageHeight = envelopMainPageHeightFirst.offsetHeight;
-        if (htmlHeight < (envelopMainPageHeight + 100)) {
+        if (htmlHeight < (envelopMainPageHeight + 130)) {
           document.getElementsByTagName('html')[0].style.height = "unset";
           document.getElementsByTagName('body')[0].style.height = "unset";
         }

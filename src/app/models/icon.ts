@@ -4,9 +4,9 @@ export class Icon {
 
     public title: string;
 
-    public Description: string;
+    public description: string;
 
-    public path: string;
+    public paths: string[] = [];
 
     public severity: IconLevel;
 
@@ -16,8 +16,8 @@ export class Icon {
 
     constructor(title, description, suggestion, path, severity, more) {
         this.title = title;
-        this.Description = description;
-        this.path = path;
+        this.description = description;
+        this.paths = path;
         this.severity = severity;
         this.suggestion = suggestion;
         this.more = more;
@@ -25,8 +25,8 @@ export class Icon {
 
     Print() {
         console.log("title = " + this.title);
-        console.log("description = " + this.Description);
-        console.log("path = " + this.path);
+        console.log("description = " + this.description);
+        console.log("path = " + this.paths);
         console.log("severity = " + this.severity);
         console.log("suggestion = " + this.suggestion);
         console.log("more = " + this.more);

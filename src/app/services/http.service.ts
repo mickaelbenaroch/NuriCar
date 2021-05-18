@@ -6,10 +6,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  private temp = process.env.apiadress;
-  private readonly baseUrl: string = "https://yossi-deliveries-api.vercel.app/";
+  public readonly baseUrl: string = "https://yossi-deliveries-api.vercel.app/";
   constructor(private httpsClient: HttpClient) {
-    console.log('apiadrress: ' + this.temp);
    }
 
   get(api: string): any {
