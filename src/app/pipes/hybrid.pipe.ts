@@ -19,6 +19,9 @@ export class HybridPipe implements PipeTransform {
     } else if (value.includes('electric')) {
       let temp = value.replace('electric', ' חשמלי ');
       return temp;
+    } else if (value && value.length === 5 && value[4] === '+') {
+      let temp = value.replace('+', ' והלאה ');
+      return temp;
     } else {
       return value;
     }
