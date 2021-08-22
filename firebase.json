@@ -1,5 +1,12 @@
 {
   "hosting": {
+    "redirects": [
+      {
+        "source": "/main",
+        "destination": "/",
+        "type": 301
+      }
+    ],
     "public": "dist/WarningLightsApp",
     "ignore": [
       "firebase.json",
