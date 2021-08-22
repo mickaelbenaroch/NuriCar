@@ -17,7 +17,6 @@ export class MainPageComponent implements OnInit{
       '/assets/symbols/bmw.jpg',
       '/assets/symbols/jeep.jpg', 
       '/assets/symbols/dacia.jpg',
-      '/assets/symbols/daewoo.jpg', 
       '/assets/symbols/dayatsu.png',
       '/assets/symbols/honda.png', 
       '/assets/symbols/volvo.jpg',
@@ -40,7 +39,6 @@ export class MainPageComponent implements OnInit{
       '/assets/symbols/peugeot.jpg', 
       '/assets/symbols/kia.jpg',
       '/assets/symbols/crysler.png', 
-      '/assets/symbols/rover.jpg',
       '/assets/symbols/renault.jpg',
       '/assets/symbols/chevrolet.jpg', 
     ];
@@ -51,7 +49,6 @@ export class MainPageComponent implements OnInit{
       "ב.מ.וו",
       "ג'יפ / Jeep",
       "דאצ'יה",
-      "דייהו",
       "דייהטסו",
       "הונדה",
       "וולוו",
@@ -74,7 +71,6 @@ export class MainPageComponent implements OnInit{
       "פיג'ו",
       "קיה",
       "קרייזלר",
-      "רובר",
       "רנו",
       "שברולט",
   ];
