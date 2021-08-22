@@ -5,6 +5,16 @@
         "source": "/main",
         "destination": "/",
         "type": 301
+      },
+      {
+        "source": "/icons",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/focus",
+        "destination": "/",
+        "type": 301
       }
     ],
     "public": "dist/WarningLightsApp",
