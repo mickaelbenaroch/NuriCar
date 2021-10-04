@@ -101,10 +101,14 @@ constructor(private router: Router, public iconService: IconServiceService, publ
   }
 
   ManufacturerChange(event: any) {
+    console.log('entered method ManufacturerChange with event : ' + event);
     if (event) {
+      console.log('entered if with event : ' + event);
       this.iconService.selectedManufacturer = event.value;
+      console.log('this.iconService.selectedManufacturer = ' + event.value);
       this.initModels();
       this.iconService.manufacturerChoosen = true;
+      console.log('exit from method ManufacturerChange ');
     }
   }
 
@@ -139,6 +143,7 @@ constructor(private router: Router, public iconService: IconServiceService, publ
 
 
   initModels() {
+    console.log('entered initModels method with : ' + this.iconService.selectedManufacturer);
     if (!this.iconService.selectedManufacturer) {
     return;
     }
@@ -240,7 +245,10 @@ constructor(private router: Router, public iconService: IconServiceService, publ
     this.iconService.vehicle.manufacturer = 'chevrolet';
     break;
     }
+    console.log('this.iconService.vehicle.manufacturer = ' + this.iconService.vehicle.manufacturer);
     this.iconService.selectedModelJson = this.carService.cars.filter(c => c.title === this.iconService.vehicle.manufacturer);
+    console.log('finished with this.iconService.selectedModelJson = ' + this.iconService.selectedModelJson);
+
   }
 
   YearChange(event: any) {
