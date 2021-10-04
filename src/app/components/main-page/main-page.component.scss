@@ -97,12 +97,12 @@
     }
 }
 
-::ng-deep {
-    mat-select{
-        text-align: right;
-        direction: rtl;
-   }
-}
+// ::ng-deep {
+//     mat-select{
+//         text-align: right;
+//         direction: rtl;
+//    }
+// }
 
 ::ng-deep {
     mat-label {
@@ -122,4 +122,9 @@
         position: relative;
         bottom: 7px;
     }
+}
+
+.panelClass {
+    text-align: right;
+    direction: rtl;
 }
