@@ -109,19 +109,28 @@ constructor(private router: Router, public iconService: IconServiceService, publ
   }
 
   ModelChange(event: any) {
+    console.log('entered method ModelChange');
     if (event) {
+      console.log('entered in to first if with event : ' + event);
         this.iconService.selectedModel = event.value;
+        console.log('event.value : ' + event.value);
       if (this.iconService.selectedModel && this.iconService.selectedModel.years) {
+        console.log('entered in to second if with this.iconService.selectedModel : ' + this.iconService.selectedModel);
+        console.log('entered in to second if with this.iconService.selectedModel.years : ' + this.iconService.selectedModel.years);
         let newYears = [];
+        console.log('before foreach with years : ' + this.iconService.selectedModel.years);
         this.iconService.selectedModel.years.forEach(year => {
         if (year !== 'hybrid') {
+          console.log('pushed year : ' + year)
           newYears.push(year);
         }
     });
+    console.log('finished foreach with newyears array : ' + newYears);
       this.iconService.selectedModel.years = newYears;
     }
       this.iconService.modelChoosen = true;
     }
+    console.log('exit from method ');
   }
 
   Back() {
