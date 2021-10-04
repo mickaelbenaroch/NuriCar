@@ -59,72 +59,67 @@
     }
 }
 
-// ::ng-deep {
-//     .mat-option-text {
-//         direction: rtl;
-//         text-align: right;
-//         font-size: 20px;
-//         img {
-//             width: 30px;
-//             height: 30px;
-//         }
-//     }
-//     .mat-option {
-//         background-color: #EEEEEE;
-//     }
-//     .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
-//         background-color: #EEEEEE !important;
-//     }
-//     .mat-option.mat-active {
-//         background-color: #EEEEEE !important;
-//     }
-//     .mat-option-text {
-//         color: #707070 !important;
-//     }
-//     .mat-select-value {
-//         color: #707070 !important;
-//         font-weight: bold;
-//     }
-//     .mat-select-trigger {
-//         bottom: 6px;
-//     }
-// }
+::ng-deep {
+    .mat-option-text {
+        direction: rtl;
+        text-align: right;
+        font-size: 20px;
+        img {
+            width: 30px;
+            height: 30px;
+        }
+    }
+    .mat-option {
+        background-color: #EEEEEE;
+    }
+    .mat-select-panel .mat-option.mat-selected:not(.mat-option-multiple) {
+        background-color: #EEEEEE !important;
+    }
+    .mat-option.mat-active {
+        background-color: #EEEEEE !important;
+    }
+    .mat-option-text {
+        color: #707070 !important;
+    }
+    .mat-select-value {
+        color: #707070 !important;
+        font-weight: bold;
+    }
+    .mat-select-trigger {
+        bottom: 6px;
+    }
+}
 
-// ::ng-deep {
-//     .mat-form-field-label {
-//         text-align: right;
-//         direction: rtl;
-//     }
-// }
+::ng-deep {
+    .mat-form-field-label {
+        text-align: right;
+        direction: rtl;
+    }
+}
 
-// ::ng-deep {
-//     mat-select{
-//         text-align: right;
-//         direction: rtl;
-//    }
-// }
+::ng-deep {
+    mat-select{
+        text-align: right;
+        direction: rtl;
+   }
+}
 
-// ::ng-deep {
-//     mat-label {
-//         color: #707070;
-//         text-align: right;
-//         direction: rtl;
-//         position: relative;
-//         bottom: 5px;
-//     }
-// }
+::ng-deep {
+    mat-label {
+        color: #707070;
+        text-align: right;
+        direction: rtl;
+        position: relative;
+        bottom: 5px;
+    }
+}
 
-// ::ng-deep {
-//     .mat-select-arrow {
-//         color: #00B9B4 !important;
-//     }   
-//     .mat-select-arrow-wrapper {
-//         position: relative;
-//         bottom: 7px;
-//     }
-// }
-
-.panelClass {
-    text-align: right;
-    direction: rtl;
+::ng-deep {
+    .mat-select-arrow {
+        color: #00B9B4 !important;
+    }   
+    .mat-select-arrow-wrapper {
+        position: relative;
+        bottom: 7px;
+    }
 }
