@@ -104,8 +104,8 @@ constructor(private router: Router, public iconService: IconServiceService, publ
     console.log('entered method ManufacturerChange with event : ' + event);
     if (event) {
       console.log('entered if with event : ' + event);
-      this.iconService.selectedManufacturer = event.value;
-      console.log('this.iconService.selectedManufacturer = ' + event.value);
+      this.iconService.selectedManufacturer = event;
+      console.log('this.iconService.selectedManufacturer = ' + event);
       this.initModels();
       this.iconService.manufacturerChoosen = true;
       console.log('exit from method ManufacturerChange ');
@@ -116,8 +116,8 @@ constructor(private router: Router, public iconService: IconServiceService, publ
     console.log('entered method ModelChange');
     if (event) {
       console.log('entered in to first if with event : ' + event);
-        this.iconService.selectedModel = event.value;
-        console.log('event.value : ' + event.value);
+        this.iconService.selectedModel = event;
+        console.log('event.value : ' + event);
       if (this.iconService.selectedModel && this.iconService.selectedModel.years) {
         console.log('entered in to second if with this.iconService.selectedModel : ' + this.iconService.selectedModel);
         console.log('entered in to second if with this.iconService.selectedModel.years : ' + this.iconService.selectedModel.years);
@@ -252,7 +252,7 @@ constructor(private router: Router, public iconService: IconServiceService, publ
   }
 
   YearChange(event: any) {
-    if (event && event.value) {
+    if (event) {
       this.iconService.buttonClicked = true;
     }
   }

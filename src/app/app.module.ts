@@ -19,6 +19,7 @@ import { FocusedIconComponent } from './components/focused-icon/focused-icon.com
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { MissingLightsComponent } from './components/missing-lights/missing-lights.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 
 const appRoutes: Routes = [
@@ -51,7 +52,8 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule,
     MatDialogModule,
-    NgxUiLoaderModule
+    NgxUiLoaderModule,
+    NgSelectModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

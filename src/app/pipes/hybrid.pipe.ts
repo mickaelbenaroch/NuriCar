@@ -8,7 +8,7 @@ export class HybridPipe implements PipeTransform {
   transform(value: string): string {
     if (value && value.includes('h') && !value.includes('posth') ) {
       let temp = value.slice(0, -1);
-      temp += ' היבריד ';
+      temp += ' היברידי ';
       return temp;
     } else if (value.includes('post') && !value.includes('posth')) {
       let temp = value.replace('post', ' והלאה ');
