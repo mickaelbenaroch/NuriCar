@@ -56,7 +56,7 @@
                      [searchable]="false"
                      [clearable]="false"
                      [multiple]="false">
-            <ng-option *ngFor="let year of iconService.selectedModel.years" [value]="year">{{year | hybrid}}</ng-option>
+            <ng-option *ngFor="let year of iconService?.selectedModel?.years" [value]="year">{{year | hybrid}}</ng-option>
           </ng-select>
         </div>
     
