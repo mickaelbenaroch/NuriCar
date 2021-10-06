@@ -117,6 +117,7 @@ constructor(private router: Router, public iconService: IconServiceService, publ
   ModelChange(event: any) {
     console.log('entered method ModelChange');
     if (event) {
+      this.iconService.selectedYear = null;
       console.log('entered in to first if with event : ' + event);
         this.iconService.selectedModel = event;
         console.log('event.value : ' + event);
