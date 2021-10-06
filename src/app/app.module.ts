@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { HybridPipe } from './pipes/hybrid.pipe';
 import { NgxUiLoaderModule } from "ngx-ui-loader";
+import { NgSelectModule } from '@ng-select/ng-select';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { Routes, RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
@@ -19,7 +20,6 @@ import { FocusedIconComponent } from './components/focused-icon/focused-icon.com
 import { SplashScreenComponent } from './components/splash-screen/splash-screen.component';
 import { MissingLightsComponent } from './components/missing-lights/missing-lights.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
-import { NgSelectModule } from '@ng-select/ng-select';
 
 
 const appRoutes: Routes = [
@@ -31,29 +31,29 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
-    IconsPageComponent,
-    MainPageComponent,
     HybridPipe,
-    SplashScreenComponent,
+    AppComponent,
+    MainPageComponent,
+    IconsPageComponent,
     FocusedIconComponent,
+    SplashScreenComponent,
     MissingLightsComponent,
     NotificationsComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    RouterModule.forRoot(appRoutes),
-    MatSelectModule,
-    MatInputModule,
-    CommonModule,
     NgbModule,
     FormsModule,
-    HttpClientModule,
-    MatDialogModule,
-    NgxUiLoaderModule,
+    CommonModule,
+    BrowserModule,
+    MatInputModule,
     NgSelectModule,
+    MatSelectModule,
+    MatDialogModule,
+    HttpClientModule,
+    AppRoutingModule,
+    NgxUiLoaderModule,
+    BrowserAnimationsModule,
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent],
