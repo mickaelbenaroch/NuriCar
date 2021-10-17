@@ -15,6 +15,7 @@ export class CarService {
     this.getCarsApiCall();
   }
   getCarsApiCall() {
+    this.ngxService.start();
     this.httpService.get('cars/cars').subscribe((res: any) => {
       if (res && res.data) {
         this.cars = res.data;
