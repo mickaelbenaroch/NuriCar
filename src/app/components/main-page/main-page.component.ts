@@ -35,7 +35,7 @@ export class MainPageComponent implements OnInit{
       '/assets/symbols/skoda.png', 
       //'/assets/symbols/wolswagen.jpg',
       '/assets/symbols/ford.jpg',
-      //'/assets/symbols/fiat.jpg', 
+      '/assets/symbols/fiat.jpg', 
       '/assets/symbols/peugeot.jpg', 
       '/assets/symbols/kia.jpg',
       //'/assets/symbols/crysler.png', 
