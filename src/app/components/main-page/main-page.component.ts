@@ -67,7 +67,7 @@ export class MainPageComponent implements OnInit{
       "סקודה",
       //"פולקסווגן",
       "פורד",
-      //"פיאט",
+      "פיאט",
       "פיג'ו",
       "קיה",
       //"קרייזלר",
