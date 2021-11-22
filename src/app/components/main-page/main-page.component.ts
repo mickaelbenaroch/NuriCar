@@ -12,7 +12,7 @@ export class MainPageComponent implements OnInit{
 
     images = [
       // '/assets/symbols/audi.png', 
-      //'/assets/symbols/opel.png',
+      '/assets/symbols/opel.png',
       //'/assets/symbols/alpha.jpg',
       //'/assets/symbols/bmw.jpg',
       //'/assets/symbols/jeep.jpg', 
@@ -44,7 +44,7 @@ export class MainPageComponent implements OnInit{
     ];
     carsnames = [
       //"אאודי",
-      //"אופל",
+      "אופל",
       //"אלפא רומיאו",
       //"ב.מ.וו",
       //"ג'יפ / Jeep",
