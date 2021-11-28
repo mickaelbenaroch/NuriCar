@@ -27,9 +27,20 @@
     }
 }
 .desc-div {
-    margin-top: 25px;
-    .desc {
-        text-align: center;
+    h3 {
+        text-align: right;
+        direction: rtl;
         color: white;
+        font-weight: bold;
+    }
+    direction: rtl;
+    text-align: right;
+    margin-top: 25px;
+    padding: 20px;
+    color: white;
+    .desc {
+        text-align: right;
+        color: white;
+        padding: 20px;
     }
 }

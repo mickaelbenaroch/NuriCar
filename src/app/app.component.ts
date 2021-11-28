@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarService } from './services/car.service';
+import { IconServiceService } from './services/icon-service.service';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +9,11 @@ import { CarService } from './services/car.service';
 })
 export class AppComponent implements OnInit {
   
-  constructor(public carService: CarService) {}
+  constructor(public carService: CarService, private iconService: IconServiceService) {}
 
   ngOnInit(): void {
     this.carService.getCars();
+    this.iconService.getIconsApiCall();
   }
 
 }

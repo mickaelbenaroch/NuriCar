@@ -1,7 +1,4 @@
 
-<div class="div-1">
-    <span>לחץ על הנורה שנדלקה לך כדי לקבל יותר פרטים על משמעותה</span>
-</div>
 <div class="arrow-div">
     <img class="arrow" (click)="Back()" src="/assets/nuricar/left_arrow.png"/> 
   </div>
@@ -9,5 +6,17 @@
     <img src="{{iconService.focusedIcon}}" />
 </div>
 <div class="desc-div" *ngIf="icon">
-    <p class="desc">{{icon.Description}}</p>
+    <h3>חומרה:</h3>
+    <span *ngIf="icon?.severity === 'red'" style="font-weight: bold; color: red;padding-right: 20px;">קריטי</span>
+    <span *ngIf="icon?.severity === 'orange'" style="font-weight: bold; color: orange;padding-right: 20px;">חמור</span>
+    <span *ngIf="icon?.severity === 'green'" style="font-weight: bold; color: green;padding-right: 20px;">לא קריטי</span>
+    <span *ngIf="icon?.severity === 'blue'" style="font-weight: bold; color: blue;padding-right: 20px;">הודעה בלבד</span>
+</div>
+<div class="desc-div" *ngIf="icon">
+    <h3>תיאור הנורה:</h3>
+    <p class="desc">{{icon.description}}</p>
+</div>
+<div class="desc-div" *ngIf="icon">
+    <h3>הצעה לפיתרון:</h3>
+    <p class="desc">{{icon.suggestion}}</p>
 </div>

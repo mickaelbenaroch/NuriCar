@@ -14,16 +14,13 @@ export class FocusedIconComponent implements OnInit, AfterViewInit {
   constructor(private router: Router, public iconService: IconServiceService) { }
 
   ngOnInit(): void {
-    this.iconService.iconDescriptionJson.forEach(icon => {
-      if (icon && icon.more) {
-        icon.more.forEach(element => {
-          if (element === this.iconService.focusedIcon) {
-            this.icon = icon;
-            return;
-          }
-        });
-      }
-    });
+    for (let i = 0; i < this.iconService.icons.length; i++) {
+      for (let j = 0; j < this.iconService.icons[i].paths.length; j++)
+        if (this.iconService.icons[i].paths[j] === this.iconService.focusedIcon) {
+          this.icon = this.iconService.icons[i];
+          return;
+        }
+    } 
   }
 
   ngAfterViewInit(): void {
