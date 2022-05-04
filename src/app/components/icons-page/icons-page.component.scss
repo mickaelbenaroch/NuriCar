@@ -11,6 +11,7 @@
     text-align: left;
     margin-bottom: 15px;
     display: flex;
+    justify-content: space-around;
     app-breadcums {
         display: flex;
         align-items: center;
@@ -37,18 +38,19 @@
             cursor: pointer;
         }
     }
-    .missing {
-        p {
-            text-align: center;
-            font-size: 20px;    
-            color: white;
-            font-family: 'Assistant', sans-serif;
-            direction: rtl;
-            span {
-                color: aqua;
-                cursor: pointer;
-                margin-right: 5px;
-            }
+}
+.missing {
+    p {
+        margin-bottom: 40px;
+        text-align: center;
+        font-size: 20px;    
+        color: white;
+        font-family: 'Assistant', sans-serif;
+        direction: rtl;
+        span {
+            color: aqua;
+            cursor: pointer;
+            margin-right: 5px;
         }
     }
 }

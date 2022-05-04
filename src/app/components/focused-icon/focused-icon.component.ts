@@ -14,6 +14,9 @@ export class FocusedIconComponent implements OnInit, AfterViewInit {
   constructor(private router: Router, public iconService: IconServiceService) { }
 
   ngOnInit(): void {
+    if(this.iconService && (!this.iconService.imagesPathArray || this.iconService.imagesPathArray.length === 0)) {
+      this.router.navigateByUrl('/');
+    }
     for (let i = 0; i < this.iconService.icons.length; i++) {
       for (let j = 0; j < this.iconService.icons[i].paths.length; j++)
         if (this.iconService.icons[i].paths[j] === this.iconService.focusedIcon) {
