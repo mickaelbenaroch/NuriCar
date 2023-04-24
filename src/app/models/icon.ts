@@ -8,7 +8,7 @@ export class Icon {
 
     public paths: string[] = [];
 
-    public severity: IconLevel;
+    public severity: string;
 
     public suggestion: string;
 

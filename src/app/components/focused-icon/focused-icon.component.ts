@@ -11,6 +11,8 @@ import { IconServiceService } from 'src/app/services/icon-service.service';
 export class FocusedIconComponent implements OnInit, AfterViewInit {
 
   public icon: Icon;
+  severity: string;
+  firstColor: string;
   constructor(private router: Router, public iconService: IconServiceService) { }
 
   ngOnInit(): void {
@@ -21,9 +23,16 @@ export class FocusedIconComponent implements OnInit, AfterViewInit {
       for (let j = 0; j < this.iconService.icons[i].paths.length; j++)
         if (this.iconService.icons[i].paths[j] === this.iconService.focusedIcon) {
           this.icon = this.iconService.icons[i];
+          const isMultiColors = this.icon?.severity.includes(',');
+          if (isMultiColors) {
+            this.severity = this.icon.severity;
+             this.firstColor = this.icon?.severity.split(',')[0].trim();
+          } else {
+           this.severity = this.icon?.severity;
+          }
           return;
         }
-    } 
+    }
   }
 
   ngAfterViewInit(): void {

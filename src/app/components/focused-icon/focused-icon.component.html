@@ -11,19 +11,8 @@
     <img src="{{iconService.focusedIcon}}" />
 </div>
 <div class="desc-div" *ngIf="icon" style="margin-top: 0px;">
-    <h3>חומרה:</h3>
-    <span *ngIf="icon?.severity === 'red'" style="font-weight: bold; color: red;padding-right: 20px;">קריטי</span>
-    <span *ngIf="icon?.severity === 'orange'" style="font-weight: bold; color: orange;padding-right: 20px;">חמור</span>
-    <span *ngIf="icon?.severity === 'green'" style="font-weight: bold; color: green;padding-right: 20px;">לא קריטי</span>
-    <span *ngIf="icon?.severity === 'blue'" style="font-weight: bold; color: blue;padding-right: 20px;">הודעה בלבד</span>
-    <span *ngIf="icon?.severity !== 'red' &&
-                 icon?.severity !== 'orange' &&
-                 icon?.severity !== 'green' &&
-                 icon?.severity !== 'blue'"
-                 style="font-weight: bold; color: red;padding-right: 20px;">
-                חמור 
-            <span style="color: white;"> (יתכן שהנורה קיימת במספר צבעים, לרוב אדומה) </span>    
-            </span>
+    <h3>חומרה: <span style="font-size: 14px;">(יתכן שהונרה תופיעה בצבעים שונים לפי סוג הרכב)</span></h3>
+    <span [innerHTML]="severity | iconColor"></span>       
 </div>
 <div class="desc-div" *ngIf="icon">
     <h3>תיאור הנורה:</h3>

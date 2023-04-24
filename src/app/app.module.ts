@@ -21,6 +21,7 @@ import { SplashScreenComponent } from './components/splash-screen/splash-screen.
 import { MissingLightsComponent } from './components/missing-lights/missing-lights.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { BreadcumsComponent } from './components/breadcums/breadcums.component';
+import { IconColorPipe } from './pipes/icon-color.pipe';
 
 
 const appRoutes: Routes = [
@@ -40,7 +41,8 @@ const appRoutes: Routes = [
     SplashScreenComponent,
     MissingLightsComponent,
     NotificationsComponent,
-    BreadcumsComponent
+    BreadcumsComponent,
+    IconColorPipe
   ],
   imports: [
     NgbModule,
