@@ -9,7 +9,7 @@ export class IconColorPipe implements PipeTransform {
 
     transform(value: string) {
         let response = '';
-        if (value) {
+        if (value && !value.includes('?')) {
             const isMulti = value.split(',')[0] ?? false;
             if (isMulti) {
                 let colorsFinish = [];
@@ -18,63 +18,65 @@ export class IconColorPipe implements PipeTransform {
                 colors.forEach(col => {
                     switch(col) {
                         case 'red':
-                            colorsFinish.push('קריטי');
+                            colorsFinish.push('אדום');
                             break;
                         case 'green':
-                            colorsFinish.push('לא קריטי');
+                            colorsFinish.push('ירוק');
                             break;
                         case 'orange':
-                            colorsFinish.push('חמור');
+                            colorsFinish.push('כתום');
                             break;
                         case 'blue':
-                            colorsFinish.push('הודעה בלבד');
+                            colorsFinish.push('כחול');
                             break;
                         case 'white':
-                            colorsFinish.push('לא מוגדר');
+                            colorsFinish.push('לבן');
                             break;
                         case 'grey':
-                            colorsFinish.push('לא מוגדר');
+                            colorsFinish.push('אפור');
                             break;
                     }
                 });
                 for (let i = 0; i < colorsFinish.length; i++) {
                     if (i !== colorsFinish.length -1) {
-                        response += `<span style="color: ${colors[i]}">${colorsFinish[i]}</span>` + `<span> או </span>`;
+                        response += `<span style="color: ${colors[i]}; font-weight: bold;">${colorsFinish[i]}</span>` + `<span> או </span>`;
                     } else {
-                        response += `<span style="color: ${colors[i]}">${colorsFinish[i]}</span>`;
+                        response += `<span style="color: ${colors[i]}; font-weight: bold;">${colorsFinish[i]}</span>`;
                     }
                 }
+                return this.sanitizer.bypassSecurityTrustHtml(response);
+            } else {
+                value = value.trim();
+                let finishvalue = '';
+                switch(value) {
+                    case 'red':
+                        finishvalue = 'אדום';
+                        break;
+                    case 'green':
+                        finishvalue = 'ירוק';
+                        break;
+                    case 'orange':
+                        finishvalue = 'כתום';
+                        break;
+                    case 'blue':
+                        finishvalue = 'כחול';
+                        break;
+                    case 'white':
+                        finishvalue = 'לבן';
+                        break;
+                    case 'grey':
+                        finishvalue = 'אפור';
+                        break;
+                    default:
+                        finishvalue = '(יתכן שהנורה קיימת במספר צבעים, לרוב אדומה)';
+                        break;    
+                }
+                response = `<span style="color: ${value}; font-weight: bold;">${finishvalue}</span>`
+                return this.sanitizer.bypassSecurityTrustHtml(response);
             }
-            return this.sanitizer.bypassSecurityTrustHtml(response);
-        } else {
-            value = value.trim();
-            let finishvalue = '';
-            switch(value) {
-                case 'red':
-                    finishvalue = 'קריטי';
-                    break;
-                case 'green':
-                    finishvalue = 'לא קריטי';
-                    break;
-                case 'orange':
-                    finishvalue = 'חמור';
-                    break;
-                case 'blue':
-                    finishvalue = 'הודעה בלבד';
-                    break;
-                case 'white':
-                    finishvalue ='לא מוגדר';
-                    break;
-                case 'grey':
-                    finishvalue = 'לא מוגדר';
-                    break;
-                default:
-                    finishvalue = '(יתכן שהנורה קיימת במספר צבעים, לרוב אדומה)';
-                    break;    
-            }
-            response = `<span style="color: ${value}">${finishvalue}</span>`
-            return this.sanitizer.bypassSecurityTrustHtml(response);
         }
+        response = `<span></span>`
+        return this.sanitizer.bypassSecurityTrustHtml(response);
     }
 
 }
