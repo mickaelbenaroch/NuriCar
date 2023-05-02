@@ -22,13 +22,26 @@ import { MissingLightsComponent } from './components/missing-lights/missing-ligh
 import { NotificationsComponent } from './components/notifications/notifications.component';
 import { BreadcumsComponent } from './components/breadcums/breadcums.component';
 import { IconColorPipe } from './pipes/icon-color.pipe';
+import { HamburgerMenuComponent } from './components/hamburger/hamburger.component';
+import { ClickOutsideDirective } from './directives/click-ouside.directive';
+import { HelpComponent } from './components/help/help.component';
+import { TipsComponent } from './components/tips/tips.component';
+import { SosComponent } from './components/sos/sos.component';
+import { PolicyComponent } from './components/policy/policy.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 const appRoutes: Routes = [
   { path: '' , component: SplashScreenComponent},
   { path: 'main' , component: MainPageComponent},
   { path: 'icons' , component: IconsPageComponent},
-  { path: 'focus', component: FocusedIconComponent}
+  { path: 'focus', component: FocusedIconComponent},
+  { path: 'help', component: HelpComponent},
+  { path: 'tips', component: TipsComponent},
+  { path: 'sos', component: SosComponent},
+  { path: 'policy', component: PolicyComponent},
+  { path: 'contact', component: ContactComponent},
+
 ];
 
 @NgModule({
@@ -42,7 +55,14 @@ const appRoutes: Routes = [
     MissingLightsComponent,
     NotificationsComponent,
     BreadcumsComponent,
-    IconColorPipe
+    IconColorPipe,
+    HamburgerMenuComponent,
+    ClickOutsideDirective,
+    HelpComponent,
+    TipsComponent,
+    SosComponent,
+    PolicyComponent,
+    ContactComponent
   ],
   imports: [
     NgbModule,

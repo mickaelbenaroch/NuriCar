@@ -1,0 +1,10 @@
+<div>
+    <img src="/assets/nuricar/menu.png" class="img" (click)="toggle()"/>
+</div>
+<div *ngIf="isOpen" class="menu">
+    <div class="item" (click)="navigate('help')">סרטוני הדרכה</div>
+    <div class="item" (click)="navigate('tips')">טיפים</div>
+    <div class="item" (click)="navigate('sos')">מוסכים וחילוץ</div>
+    <div class="item" (click)="navigate('policy')">מדיניות ופרטיות</div>
+    <div class="item" (click)="navigate('contact')">יצירת קשר</div>
+</div>
