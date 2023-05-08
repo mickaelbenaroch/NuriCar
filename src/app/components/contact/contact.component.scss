@@ -1,0 +1,17 @@
+.arrow-div {
+    width: 100%;
+    text-align: left;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 50px;
+    margin-top: 35px;
+    app-breadcums {
+        display: flex;
+        align-items: center;
+    }
+    .arrow {
+        width: 45px;
+        height: 45px;
+    }
+}
