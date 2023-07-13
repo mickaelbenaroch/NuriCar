@@ -15,6 +15,31 @@
         "source": "/focus",
         "destination": "/",
         "type": 301
+      },
+      {
+        "source": "/contact",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/policy",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/sos",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/help",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/tips",
+        "destination": "/",
+        "type": 301
       }
     ],
     "public": "dist/WarningLightsApp",
