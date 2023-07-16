@@ -48,8 +48,6 @@ sendMissingRequest() {
       if (res && res.data === true) {
       this.ngxService.stop();
       this.dialog.close('true');
-    } else {
-      this.sendMissingRequest();
     }
   });
 }
