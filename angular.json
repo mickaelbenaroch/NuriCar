@@ -72,18 +72,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "WarningLightsApp:build"
+            "buildTarget": "WarningLightsApp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "WarningLightsApp:build:production"
+              "buildTarget": "WarningLightsApp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "WarningLightsApp:build"
+            "buildTarget": "WarningLightsApp:build"
           }
         },
         "test": {
@@ -130,6 +130,5 @@
         }
       }
     }
-  },
-  "defaultProject": "WarningLightsApp"
+  }
 }

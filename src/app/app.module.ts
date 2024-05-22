@@ -80,9 +80,6 @@ const appRoutes: Routes = [
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
-  bootstrap: [AppComponent],
-  entryComponents: [
-    MissingLightsComponent
-  ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
