@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./splash-screen.component.scss']
 })
 export class SplashScreenComponent implements OnInit {
-
+  splash = true;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -18,6 +18,9 @@ export class SplashScreenComponent implements OnInit {
     } else {
       document.getElementsByTagName('html')[0].style.height = "100%";
     }
+    setTimeout(() => {
+      this.splash = false;
+    },3000);
   }
 
   GoToMainPage() {
