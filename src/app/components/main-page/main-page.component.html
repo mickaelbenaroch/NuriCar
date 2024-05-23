@@ -1,53 +1,62 @@
-<div class="envelopMainPage">
-    <div class="title-div">
-      <img class="logo" src="/assets/nuricar/logo.png"/> 
+<div class="envelop">
+    <div class="header" [ngClass]="{'end': step === 1 || step === 2 || step === 3}">
+      <img *ngIf="step === 0" src="/assets/nuricar/moving-car.png"/>
+      <img *ngIf="step === 1" src="/assets/nuricar/pos2.png"/>
+      <img *ngIf="step === 2" src="/assets/nuricar/pos3.png"/>
+      <img *ngIf="step === 3" src="/assets/nuricar/pos4.png"/>
     </div>
-    <!-- <div class="arrow-div">
-      <img class="arrow" (click)="Back()" src="/assets/nuricar/left_arrow.png"/> 
-    </div> -->
-        <div class="row-dp">
-          <label class="label">בחר יצרן:</label>
-          <ng-select [(ngModel)]="iconService.selectedManufacturer" 
-                     name="manufacturer"
-                     (change)="ManufacturerChange($event)"
-                     [editableSearchTerm]="false"
-                     [searchable]="false"
-                     [clearable]="false"
-                     [multiple]="false">
-            <ng-option *ngFor="let car of carsnames; let i = index" [value]="car">
-              <img class="img" src='{{images[i]}}'>{{car}}
-            </ng-option>
-         </ng-select>
-        </div>
-    
-        <div class="row-dp second-dp" *ngIf="iconService.manufacturerChoosen && iconService.selectedModelJson">
-          <label class="label">בחר מודל:</label>
-          <ng-select [(ngModel)]="iconService.selectedModel" 
-                     name="model"
-                     (change)="ModelChange($event)"
-                     [editableSearchTerm]="false"
-                     [searchable]="false"
-                     [clearable]="false"
-                     [multiple]="false">
-            <ng-option *ngFor="let model of iconService.selectedModelJson" [value]="model">{{model.modelName}}</ng-option>
-          </ng-select>
-        </div>
-    
-        <div class="row-dp second-dp" *ngIf="iconService.modelChoosen">
-          <label class="label">בחר שנה:</label>
-          <ng-select [(ngModel)]="iconService.selectedYear" 
-                     name="year"
-                     (change)="YearChange($event)"
-                     [editableSearchTerm]="false"
-                     [searchable]="false"
-                     [clearable]="false"
-                     [multiple]="false">
-            <ng-option *ngFor="let year of iconService?.selectedModel?.years" [value]="year">{{year | hybrid}}</ng-option>
-          </ng-select>
-        </div>
-    
-        <div class="but-div" *ngIf="iconService.buttonClicked" (click)="SearchCar()">
-          <button>חפש!</button>
-        </div>
+
+    <div class="choose">
+        <span>חפשו את דגם הרכב שלכם</span>
     </div>
-    
+
+    <div class="envelopMainPage">
+      <div class="row-dp">
+        <label class="label">בחר יצרן:</label>
+        <ng-select [(ngModel)]="iconService.selectedManufacturer" 
+                  name="manufacturer"
+                  (change)="ManufacturerChange($event)"
+                  [editableSearchTerm]="false"
+                  [searchable]="false"
+                  [clearable]="false"
+                  [multiple]="false">
+          <ng-option *ngFor="let car of carsnames; let i = index" [value]="car">
+            <div class="div-opt">
+              <img class="img" src='{{images[i]}}'>
+              <span style=" align-self: center;">{{car}}</span>              
+            </div>
+          </ng-option>
+      </ng-select>
+      </div>
+
+      <div class="row-dp second-dp" *ngIf="iconService.manufacturerChoosen && iconService.selectedModelJson">
+        <label class="label">בחר מודל:</label>
+        <ng-select [(ngModel)]="iconService.selectedModel" 
+                  name="model"
+                  (change)="ModelChange($event)"
+                  [editableSearchTerm]="false"
+                  [searchable]="false"
+                  [clearable]="false"
+                  [multiple]="false">
+          <ng-option *ngFor="let model of iconService.selectedModelJson" [value]="model">{{model.modelName}}</ng-option>
+        </ng-select>
+      </div>
+
+      <div class="row-dp second-dp" *ngIf="iconService.modelChoosen">
+        <label class="label">בחר שנה:</label>
+        <ng-select [(ngModel)]="iconService.selectedYear" 
+                  name="year"
+                  (change)="YearChange($event)"
+                  [editableSearchTerm]="false"
+                  [searchable]="false"
+                  [clearable]="false"
+                  [multiple]="false">
+          <ng-option *ngFor="let year of iconService?.selectedModel?.years" [value]="year">{{year | hybrid}}</ng-option>
+        </ng-select>
+      </div>
+
+      <div class="but-div" *ngIf="iconService.buttonClicked" (click)="SearchCar()">
+        <button>חפש!</button>
+      </div>
+  </div>
+</div>

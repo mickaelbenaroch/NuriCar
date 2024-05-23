@@ -75,6 +75,7 @@ export class MainPageComponent implements OnInit{
       "שברולט",
   ];
   title = 'WarningLightsApp';
+  step = 0;
 
   @HostListener('window:popstate', ['$event'])
     onPopState(event) {
@@ -84,20 +85,20 @@ export class MainPageComponent implements OnInit{
 constructor(private router: Router, public iconService: IconServiceService, public carService: CarService) {}
 
   ngOnInit() {
-    let currentUrl = location.pathname;
-    if (currentUrl === '/' && this.iconService.buttonClicked) {
-    this.iconService.buttonClicked = false;
-    }
-    if (currentUrl === '/icons' && !this.iconService.buttonClicked) {
-    this.router.navigateByUrl('');
-    }
-    let htmlHeight = document.getElementsByTagName('html')[0].offsetHeight;
-    let envelopMainPageHeight = (document.getElementsByClassName('envelopMainPage')[0] as HTMLElement).offsetHeight;
-    if (htmlHeight < envelopMainPageHeight) {
-      document.getElementsByTagName('html')[0].style.height = "unset";
-    } else {
-      document.getElementsByTagName('html')[0].style.height = "100%";
-    }
+    // let currentUrl = location.pathname;
+    // if (currentUrl === '/' && this.iconService.buttonClicked) {
+    // this.iconService.buttonClicked = false;
+    // }
+    // if (currentUrl === '/icons' && !this.iconService.buttonClicked) {
+    // this.router.navigateByUrl('');
+    // }
+    // let htmlHeight = document.getElementsByTagName('html')[0].offsetHeight;
+    // let envelopMainPageHeight = (document.getElementsByClassName('envelopMainPage')[0] as HTMLElement).offsetHeight;
+    // if (htmlHeight < envelopMainPageHeight) {
+    //   document.getElementsByTagName('html')[0].style.height = "unset";
+    // } else {
+    //   document.getElementsByTagName('html')[0].style.height = "100%";
+    // }
   }
 
   ManufacturerChange(event: any) {
