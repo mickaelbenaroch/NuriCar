@@ -1,20 +1,21 @@
-<div class="envelopSplash" [ngClass]="{'first-bg-gradient': splash, 'second-bg-gradient': !splash}">
-    <!-- <div class="par"> -->
-        <div class="logo-div" *ngIf="splash">
-            <img class="logo" src="/assets/nuricar/logo-new.svg"/> 
+<div *ngIf="splash" class="envelopSplash first-bg-gradient">
+    <div class="logo-div">
+        <img class="logo" src="/assets/nuricar/logo-new.svg"/> 
+    </div>    
+</div>
+
+<div *ngIf="!splash" class="second-bg-gradient secondScreen">
+    <div class="logo-div-2">
+        <img class="logo" src="/assets/nuricar/logo-present-page.svg"/> 
+        <img class="car" src="/assets/nuricar/car.png"/>
+        <p class="text">כל הנאמר באפליקציה זו בגדר המלצה בלבד!  אין לאחז בזה חשיבות, יש להתייעץ עם גורם מוסמך או מומחה .</p>
+        <div class="button-div">
+            <button (click)="GoToMainPage()" class="next-button"><span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
+                        <path d="M8.84487 3.30593C8.64493 3.11547 8.3284 3.12317 8.13793 3.32311C7.94747 3.52307 7.9552 3.83955 8.15513 4.03001L12.3227 7.99973H2.5C2.22386 7.99973 2 8.2236 2 8.49973C2 8.77587 2.22386 8.99973 2.5 8.99973H12.3228L8.15513 12.9695C7.9552 13.16 7.94747 13.4765 8.13793 13.6765C8.3284 13.8764 8.64493 13.8841 8.84487 13.6937L13.7908 8.98253C13.9034 8.87527 13.9701 8.7384 13.9907 8.5962C13.9968 8.565 14 8.53273 14 8.49973C14 8.46673 13.9968 8.4344 13.9907 8.40313C13.97 8.261 13.9033 8.12427 13.7908 8.01707L8.84487 3.30593Z" fill="white"/>
+                    </svg>
+                </span>אשר והמשך
+            </button>
         </div>
-        <div class="logo-div-2" *ngIf="!splash">
-            <img class="logo" src="/assets/nuricar/logo-present-page.svg"/> 
-            <img class="car" src="/assets/nuricar/car.png"/>
-            <p class="text">כל הנאמר באפליקציה זו בגדר המלצה בלבד!  אין לאחז בזה חשיבות, יש להתייעץ עם גורם מוסמך או מומחה .</p>
-            <div class="button-div">
-                <button (click)="GoToMainPage()" class="next-button"><span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none">
-                            <path d="M8.84487 3.30593C8.64493 3.11547 8.3284 3.12317 8.13793 3.32311C7.94747 3.52307 7.9552 3.83955 8.15513 4.03001L12.3227 7.99973H2.5C2.22386 7.99973 2 8.2236 2 8.49973C2 8.77587 2.22386 8.99973 2.5 8.99973H12.3228L8.15513 12.9695C7.9552 13.16 7.94747 13.4765 8.13793 13.6765C8.3284 13.8764 8.64493 13.8841 8.84487 13.6937L13.7908 8.98253C13.9034 8.87527 13.9701 8.7384 13.9907 8.5962C13.9968 8.565 14 8.53273 14 8.49973C14 8.46673 13.9968 8.4344 13.9907 8.40313C13.97 8.261 13.9033 8.12427 13.7908 8.01707L8.84487 3.30593Z" fill="white"/>
-                        </svg>
-                    </span>אשר והמשך
-                </button>
-            </div>
-        </div>
-    
+    </div>
 </div>
