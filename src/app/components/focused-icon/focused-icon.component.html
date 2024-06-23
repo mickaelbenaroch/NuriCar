@@ -1,24 +1,25 @@
-
-<div class="arrow-div">
-    <img class="arrow" (click)="Back()" src="/assets/nuricar/left_arrow.png"/> 
-    <app-breadcums></app-breadcums>
-</div>
-<div class="desc-div" *ngIf="icon">
-      <h3>שם הנורה:</h3>
-      <span style="font-size: 25px;text-decoration: underline;">{{icon?.title}}</span>
-  </div>
-<div class="envelopIconFocusPage">
-    <img src="{{iconService.focusedIcon}}" />
-</div>
-<div class="desc-div" *ngIf="icon" style="margin-top: 0px;">
-    <h3>חומרה: <span style="font-size: 14px;" *ngIf="severity?.includes(',')">(יתכן שהונרה תופיעה בצבעים שונים לפי סוג הרכב)</span></h3>
-    <span [innerHTML]="severity | iconColor"></span>       
-</div>
-<div class="desc-div" *ngIf="icon">
-    <h3>תיאור הנורה:</h3>
-    <p class="desc">{{icon.description}}</p>
-</div>
-<div class="desc-div" *ngIf="icon">
-    <h3>הצעה לפיתרון:</h3>
-    <p class="desc">{{icon.suggestion}}</p>
+<div class="envelop">
+    <div class="arrow-div">
+        <img class="arrow" (click)="Back()" src="/assets/nuricar/left_arrow.png"/> 
+        <app-breadcums></app-breadcums>
+    </div>
+    <div class="desc-div" *ngIf="icon">
+          <h3>שם הנורה:</h3>
+          <span style="font-size: 25px;text-decoration: underline;">{{icon?.title}}</span>
+      </div>
+    <div class="envelopIconFocusPage">
+        <img src="{{iconService.focusedIcon}}" />
+    </div>
+    <div class="desc-div" *ngIf="icon" style="margin-top: 0px;">
+        <h3>חומרה: <span style="font-size: 14px;" *ngIf="severity?.includes(',')">(יתכן שהונרה תופיעה בצבעים שונים לפי סוג הרכב)</span></h3>
+        <span [innerHTML]="severity | iconColor"></span>       
+    </div>
+    <div class="desc-div" *ngIf="icon">
+        <h3>תיאור הנורה:</h3>
+        <p class="desc">{{icon.description}}</p>
+    </div>
+    <div class="desc-div" *ngIf="icon">
+        <h3>הצעה לפיתרון:</h3>
+        <p class="desc">{{icon.suggestion}}</p>
+    </div>
 </div>
