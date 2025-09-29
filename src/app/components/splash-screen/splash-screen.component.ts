@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
-@Component({
-  selector: 'app-splash-screen',
+@Component({standalone: true, selector: 'app-splash-screen',
   templateUrl: './splash-screen.component.html',
-  styleUrls: ['./splash-screen.component.scss']
-})
+  imports: [CommonModule, FormsModule],
+  styleUrls: ['./splash-screen.component.scss']})
 export class SplashScreenComponent implements OnInit {
   splash = true;
   constructor(private router: Router) { }

@@ -2,11 +2,9 @@ import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
 
-@Component({
-  selector: 'menu',
+@Component({standalone: true, selector: 'menu',
   templateUrl: './hamburger.component.html',
-  styleUrls: ['./hamburger.component.scss']
-})
+  styleUrls: ['./hamburger.component.scss']})
 export class HamburgerMenuComponent {
   isOpen = false;
   constructor(private router: Router) {}

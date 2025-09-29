@@ -1,8 +1,6 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
-@Pipe({
-  name: 'hybrid'
-})
+@Pipe({standalone: true, name: 'hybrid'})
 export class HybridPipe implements PipeTransform {
 
   transform(value: string): string {

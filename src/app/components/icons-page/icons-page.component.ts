@@ -4,12 +4,13 @@ import { Router } from '@angular/router';
 import { IconServiceService} from 'src/app/services/icon-service.service'
 import { MissingLightsComponent } from '../missing-lights/missing-lights.component';
 import { NotificationsComponent } from '../notifications/notifications.component';
-
-@Component({
-  selector: 'app-icons-page',
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { BreadcumsComponent } from '../breadcums/breadcums.component';
+@Component({standalone: true, selector: 'app-icons-page',
+  imports: [CommonModule, FormsModule, BreadcumsComponent],
   templateUrl: './icons-page.component.html',
-  styleUrls: ['./icons-page.component.scss']
-})
+  styleUrls: ['./icons-page.component.scss']})
 export class IconsPageComponent implements OnInit, DoCheck {
 
   constructor(public iconService: IconServiceService,

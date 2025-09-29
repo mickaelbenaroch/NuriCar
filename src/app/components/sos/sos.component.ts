@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-@Component({
-  selector: 'app-sos',
+@Component({standalone: true, selector: 'app-sos',
   templateUrl: './sos.component.html',
-  styleUrls: ['./sos.component.scss']
-})
+  styleUrls: ['./sos.component.scss']})
 export class SosComponent implements OnInit {
 
   constructor(private router: Router) { }

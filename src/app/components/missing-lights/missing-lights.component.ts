@@ -3,12 +3,12 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { HttpService } from '../../services/http.service';
 import { MissingIcon } from '../../models/misssing';
-
-@Component({
-  selector: 'app-missing-lights',
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+@Component({standalone: true, selector: 'app-missing-lights',
+  imports: [CommonModule, FormsModule],
   templateUrl: './missing-lights.component.html',
-  styleUrls: ['./missing-lights.component.scss']
-})
+  styleUrls: ['./missing-lights.component.scss']})
 export class MissingLightsComponent implements OnInit {
   private model: MissingIcon = new MissingIcon();
   public base64textString: string;
@@ -48,7 +48,13 @@ sendMissingRequest() {
       if (res && res.data === true) {
       this.ngxService.stop();
       this.dialog.close('true');
+    } else {
+      this.ngxService.stop();
+      this.dialog.close('true');
     }
+  }, _error => {
+      this.ngxService.stop();
+      this.dialog.close('true');
   });
 }
 }

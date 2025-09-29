@@ -2,12 +2,15 @@ import { Router } from '@angular/router';
 import { CarService } from 'src/app/services/car.service';
 import { Component, HostListener, OnInit } from '@angular/core';
 import { IconServiceService } from 'src/app/services/icon-service.service';
+import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { CommonModule } from '@angular/common';
+import { HybridPipe } from 'src/app/pipes/hybrid.pipe';
 
-@Component({
-  selector: 'app-main-page',
+@Component({standalone: true, selector: 'app-main-page',
   templateUrl: './main-page.component.html',
-  styleUrls: ['./main-page.component.scss']
-})
+  imports: [CommonModule, FormsModule, NgSelectModule, HybridPipe],
+  styleUrls: ['./main-page.component.scss']})
 export class MainPageComponent implements OnInit{
 
     images = [

@@ -1,9 +1,7 @@
 import { Pipe, PipeTransform } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
-@Pipe({
-  name: 'iconColor'
-})
+@Pipe({standalone: true, name: 'iconColor'})
 export class IconColorPipe implements PipeTransform {
     constructor(private sanitizer: DomSanitizer) {}
 

@@ -1,13 +1,16 @@
 import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Icon } from 'src/app/models/icon';
 import { IconServiceService } from 'src/app/services/icon-service.service';
+import { BreadcumsComponent } from 'src/app/components/breadcums/breadcums.component';
+import { IconColorPipe } from 'src/app/pipes/icon-color.pipe';
 
-@Component({
-  selector: 'app-focused-icon',
+@Component({standalone: true, selector: 'app-focused-icon',
   templateUrl: './focused-icon.component.html',
-  styleUrls: ['./focused-icon.component.scss']
-})
+  imports: [CommonModule, FormsModule, BreadcumsComponent, IconColorPipe],
+  styleUrls: ['./focused-icon.component.scss']})
 export class FocusedIconComponent implements OnInit, AfterViewInit {
 
   public icon: Icon;

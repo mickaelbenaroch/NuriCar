@@ -1,11 +1,9 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
-@Component({
-  selector: 'app-notifications',
+@Component({standalone: true, selector: 'app-notifications',
   templateUrl: './notifications.component.html',
-  styleUrls: ['./notifications.component.scss']
-})
+  styleUrls: ['./notifications.component.scss']})
 export class NotificationsComponent implements OnInit {
 
   @Input() message: string;
