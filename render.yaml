@@ -1,0 +1,40 @@
+services:
+  - type: static
+    name: warninglightsapp
+    staticPublishPath: dist/WarningLightsApp
+    routes:
+      - type: redirect
+        source: /main
+        destination: /
+        statusCode: 301
+      - type: redirect
+        source: /icons
+        destination: /
+        statusCode: 301
+      - type: redirect
+        source: /focus
+        destination: /
+        statusCode: 301
+      - type: redirect
+        source: /contact
+        destination: /
+        statusCode: 301
+      - type: redirect
+        source: /policy
+        destination: /
+        statusCode: 301
+      - type: redirect
+        source: /sos
+        destination: /
+        statusCode: 301
+      - type: redirect
+        source: /help
+        destination: /
+        statusCode: 301
+      - type: redirect
+        source: /tips
+        destination: /
+        statusCode: 301
+      - type: rewrite
+        source: /*
+        destination: /index.html
