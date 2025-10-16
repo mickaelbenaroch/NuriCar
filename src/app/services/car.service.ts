@@ -14,15 +14,26 @@ export class CarService {
   getCars() {
     this.getCarsApiCall();
   }
-  getCarsApiCall() {
-    this.ngxService.start();
-    this.httpService.get('cars/cars').subscribe((res: any) => {
+getCarsApiCall() {
+  this.ngxService.start();
+
+  this.httpService.get('cars/cars').subscribe({
+    next: (res: any) => {
       if (res && res.data) {
         this.cars = res.data;
         this.ngxService.stop();
       } else {
-        this.getCarsApiCall();
+        console.warn('No data in response, retrying...');
+        this.getCarsApiCall(); // ⚠️ Be careful: could cause infinite recursion
       }
-    });
-  }
+    },
+    error: (err) => {
+      console.error('Error fetching cars:', err);
+      this.ngxService.stop();
+      // Optionally show an error message to the user
+      // this.toastr.error('Failed to load cars');
+    }
+  });
+}
+
 }

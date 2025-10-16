@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  public readonly baseUrl: string = "https://yossi-deliveries-api.vercel.app/";
+  public readonly baseUrl: string = " https://nuricarapi.onrender.com/";
   constructor(private httpsClient: HttpClient) {
    }
 
