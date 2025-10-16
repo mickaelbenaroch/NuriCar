@@ -1,6 +1,7 @@
 services:
   - type: static
-    name: warninglightsapp
+    name: nuricar
+    buildCommand: npm install && npm run build
     staticPublishPath: dist/WarningLightsApp
     routes:
       - type: redirect
