@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">nuricar</string>
+    <string name="title_activity_main">nuricar</string>
+    <string name="package_name">com.nuricar.app</string>
+    <string name="custom_url_scheme">com.nuricar.app</string>
+</resources>
