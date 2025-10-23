@@ -11,7 +11,7 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']})
 export class AppComponent implements OnInit {
-  @ViewChild('menu') menu: HamburgerMenuComponent;
+  @ViewChild('menu') menu!: HamburgerMenuComponent;
   constructor(public carService: CarService,
               private iconService: IconServiceService) {}
 

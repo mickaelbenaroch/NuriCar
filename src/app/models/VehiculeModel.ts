@@ -1,14 +1,14 @@
 export class VehiculeEntity {
 
-    public manufacturer: string;
+    public manufacturer: string = '';
 
-    public vehicleType: string;
+    public vehicleType: string = '';
 
-    public isSingleYear: boolean;
+    public isSingleYear: boolean = false;
 
-    public vehicleYear: string;
+    public vehicleYear: string = '';
 
-    public iconsNumber: number;
+    public iconsNumber: number = 0;
 
-    public isHybrid: boolean;
+    public isHybrid: boolean = false;
 }

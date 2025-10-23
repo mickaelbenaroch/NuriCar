@@ -20,7 +20,13 @@ export class IconServiceService implements OnInit{
   selectedModel: any;
   selectedYear: string;
   buttonClicked: boolean = false;
-  public selectedModelJson = new Array<Car>();
+  private _selectedModelJson = new Array<Car>();
+  public get selectedModelJson() {
+    return this._selectedModelJson;
+  }
+  public set selectedModelJson(value) {
+    this._selectedModelJson = value;
+  }
   public vehicle = new VehiculeEntity();
   public focusedIcon; 
   public icons: Icon[] = [];

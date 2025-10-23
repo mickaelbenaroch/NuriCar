@@ -45,7 +45,7 @@ export class MissingLightsComponent implements OnInit {
 sendMissingRequest() {
   this.httpService.post('icons/missing', this.model).subscribe(
     res =>{
-      if (res && res.data === true) {
+      if (res && (res as any).data === true) {
       this.ngxService.stop();
       this.dialog.close('true');
     } else {

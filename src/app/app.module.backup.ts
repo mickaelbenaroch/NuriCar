@@ -22,6 +22,13 @@ import { TipsComponent } from './components/tips/tips.component';
 import { SosComponent } from './components/sos/sos.component';
 import { PolicyComponent } from './components/policy/policy.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { BreadcumsComponent } from './components/breadcums/breadcums.component';
+import { HamburgerMenuComponent } from './components/hamburger/hamburger.component';
+import { NotificationsComponent } from './components/notifications/notifications.component';
+import { MissingLightsComponent } from './components/missing-lights/missing-lights.component';
+import { HybridPipe } from './pipes/hybrid.pipe';
+import { IconColorPipe } from './pipes/icon-color.pipe';
+import { ClickOutsideDirective } from './directives/click-ouside.directive';
 
 
 const appRoutes: Routes = [
@@ -38,7 +45,25 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AppComponent,
+    MainPageComponent,
+    IconsPageComponent,
+    FocusedIconComponent,
+    SplashScreenComponent,
+    HelpComponent,
+    TipsComponent,
+    SosComponent,
+    PolicyComponent,
+    ContactComponent,
+    BreadcumsComponent,
+    HamburgerMenuComponent,
+    NotificationsComponent,
+    MissingLightsComponent,
+    HybridPipe,
+    IconColorPipe,
+    ClickOutsideDirective
+  ],
   imports: [
     NgbModule,
     FormsModule,

@@ -1,9 +1,11 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 
 @Component({standalone: true, selector: 'menu',
   templateUrl: './hamburger.component.html',
+  imports: [CommonModule],
   styleUrls: ['./hamburger.component.scss']})
 export class HamburgerMenuComponent {
   isOpen = false;

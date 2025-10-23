@@ -107,13 +107,23 @@ constructor(private router: Router, public iconService: IconServiceService, publ
   ManufacturerChange(event: any) {
     console.log('entered method ManufacturerChange with event : ' + event);
     if (event) {
+      // First, clear all dependent state immediately
       this.iconService.selectedModel = null;
-      this.iconService.selectedYear = null;
+      this.iconService.selectedYear = '';
+      this.iconService.modelChoosen = false;
+      this.iconService.buttonClicked = false;
+      this.iconService.selectedModelJson = []; // Clear immediately
+      
       console.log('entered if with event : ' + event);
       this.iconService.selectedManufacturer = event;
       console.log('this.iconService.selectedManufacturer = ' + event);
-      this.initModels();
-      this.iconService.manufacturerChoosen = true;
+      
+      // Use setTimeout to ensure state is cleared before updating
+      setTimeout(() => {
+        this.initModels();
+        this.iconService.manufacturerChoosen = true;
+      }, 0);
+      
       console.log('exit from method ManufacturerChange ');
     }
   }
@@ -121,25 +131,41 @@ constructor(private router: Router, public iconService: IconServiceService, publ
   ModelChange(event: any) {
     console.log('entered method ModelChange');
     if (event) {
-      this.iconService.selectedYear = null;
+      // Reset dependent dropdown and state
+      this.iconService.selectedYear = '';
+      this.iconService.buttonClicked = false;
+      this.iconService.modelChoosen = false;
+      
       console.log('entered in to first if with event : ' + event);
+      
+      // Use setTimeout to ensure clean state transition
+      setTimeout(() => {
         this.iconService.selectedModel = event;
         console.log('event.value : ' + event);
-      if (this.iconService.selectedModel && this.iconService.selectedModel.years) {
-        console.log('entered in to second if with this.iconService.selectedModel : ' + this.iconService.selectedModel);
-        console.log('entered in to second if with this.iconService.selectedModel.years : ' + this.iconService.selectedModel.years);
-        let newYears = [];
-        console.log('before foreach with years : ' + this.iconService.selectedModel.years);
-        this.iconService.selectedModel.years.forEach(year => {
-        if (year !== 'hybrid') {
-          console.log('pushed year : ' + year)
-          newYears.push(year);
+        
+        if (this.iconService.selectedModel && this.iconService.selectedModel.years) {
+          console.log('entered in to second if with this.iconService.selectedModel : ' + this.iconService.selectedModel);
+          console.log('entered in to second if with this.iconService.selectedModel.years : ' + this.iconService.selectedModel.years);
+          
+          // Create a filtered copy instead of modifying the original
+          const filteredYears: string[] = [];
+          console.log('before foreach with years : ' + this.iconService.selectedModel.years);
+          
+          this.iconService.selectedModel.years.forEach((year: string) => {
+            if (year !== 'hybrid') {
+              console.log('pushed year : ' + year)
+              filteredYears.push(year);
+            }
+          });
+          
+          console.log('finished foreach with filtered years array : ' + filteredYears);
+          
+          // Store the filtered years in a separate property to avoid modifying original data
+          this.iconService.selectedModel.filteredYears = filteredYears;
         }
-    });
-    console.log('finished foreach with newyears array : ' + newYears);
-      this.iconService.selectedModel.years = newYears;
-    }
-      this.iconService.modelChoosen = true;
+        
+        this.iconService.modelChoosen = true;
+      }, 0);
     }
     console.log('exit from method ');
   }
@@ -152,8 +178,11 @@ constructor(private router: Router, public iconService: IconServiceService, publ
   initModels() {
     console.log('entered initModels method with : ' + this.iconService.selectedManufacturer);
     if (!this.iconService.selectedManufacturer) {
-    return;
+      return;
     }
+    
+    // Clear previous model selection
+    this.iconService.selectedModelJson = [];
     switch (this.iconService.selectedManufacturer) {
     case "אאודי":
     this.iconService.vehicle.manufacturer = 'audi';
@@ -253,8 +282,19 @@ constructor(private router: Router, public iconService: IconServiceService, publ
     break;
     }
     console.log('this.iconService.vehicle.manufacturer = ' + this.iconService.vehicle.manufacturer);
-    this.iconService.selectedModelJson = this.carService.cars.filter(c => c.title === this.iconService.vehicle.manufacturer);
-    console.log('finished with this.iconService.selectedModelJson = ' + this.iconService.selectedModelJson);
+    
+    // Filter and validate the results
+    const filteredModels = this.carService.cars.filter(c => c.title === this.iconService.vehicle.manufacturer);
+    console.log('Raw filtered models:', filteredModels);
+    console.log('Number of models found:', filteredModels.length);
+    
+    // Ensure we have valid models with required properties
+    this.iconService.selectedModelJson = filteredModels.filter(model => 
+      model && model.modelName && model.englishModelName
+    );
+    
+    console.log('Final validated selectedModelJson:', this.iconService.selectedModelJson);
+    console.log('Number of valid models:', this.iconService.selectedModelJson.length);
 
   }
 
@@ -265,21 +305,45 @@ constructor(private router: Router, public iconService: IconServiceService, publ
   }
 
   SearchCar() {
-    let index = this.iconService.selectedModel.years.indexOf(this.iconService.selectedYear);
-    this.iconService.vehicle.iconsNumber = this.iconService.selectedModel.icons[index];
-    if (this.iconService.selectedYear.includes('+')) {
-    this.iconService.vehicle.isSingleYear = true;
+    // Find the index in the original years array (not the filtered one)
+    // because the icons array corresponds to the original years array
+    const originalYears = this.iconService.selectedModel.years;
+    let index = originalYears.indexOf(this.iconService.selectedYear);
+    
+    // If not found in original, try to find a matching year that might include 'h'
+    if (index === -1) {
+      index = originalYears.findIndex(year => 
+        year.replace('h', '') === this.iconService.selectedYear ||
+        year === this.iconService.selectedYear + 'h'
+      );
     }
-    this.iconService.vehicle.vehicleYear = this.iconService.selectedYear;
-    if (this.iconService.selectedModel.years[index].includes('h')) {
-    this.iconService.vehicle.isHybrid = true;
+    
+    console.log('Selected year:', this.iconService.selectedYear);
+    console.log('Original years:', originalYears);
+    console.log('Found index:', index);
+    
+    if (index !== -1) {
+      this.iconService.vehicle.iconsNumber = this.iconService.selectedModel.icons[index];
+      
+      if (this.iconService.selectedYear.includes('+')) {
+        this.iconService.vehicle.isSingleYear = true;
+      }
+      
+      this.iconService.vehicle.vehicleYear = this.iconService.selectedYear;
+      
+      // Check if the original year at this index includes 'h' for hybrid detection
+      if (originalYears[index].includes('h')) {
+        this.iconService.vehicle.isHybrid = true;
+      } else {
+        this.iconService.vehicle.isHybrid = false;
+      }
+      
+      this.iconService.vehicle.vehicleType = this.iconService.selectedModel.englishModelName;
+      this.iconService.searchCar(this.iconService.vehicle);
+      this.router.navigateByUrl('icons');
     } else {
-      this.iconService.vehicle.isHybrid = false;
+      console.error('Could not find selected year in original years array');
     }
-    this.iconService.vehicle.vehicleType = this.iconService.selectedModel.englishModelName;
-    this.iconService.searchCar(this.iconService.vehicle);
-    this.router.navigateByUrl('icons');
-
   }
 
 }

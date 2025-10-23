@@ -6,15 +6,15 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  public readonly baseUrl: string = " https://nuricarapi.onrender.com/";
+  public readonly baseUrl: string = "https://nuricarapi.onrender.com/";
   constructor(private httpsClient: HttpClient) {
    }
 
-  get(api: string): any {
-    return this.httpsClient.get(this.baseUrl + api);
+  get<T>(api: string) {
+    return this.httpsClient.get<T>(this.baseUrl + api);
   }
 
-  post(api: string, object: any): any {
-    return this.httpsClient.post(this.baseUrl + api, object);
+  post<T>(api: string, object: any) {
+    return this.httpsClient.post<T>(this.baseUrl + api, object);
   }
 }
