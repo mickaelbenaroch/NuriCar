@@ -23,6 +23,9 @@ body {
      font: unset !important;
      letter-spacing: unset !important;
  }
+app-splash-screen, app-main-page, app-icons-page, app-focused-icon {
+        height: 100%;
+}
 app-root {
     height: 100%;
     display: flex;
