@@ -4,7 +4,15 @@
         <div class="div-1">נא לתאר את הנורית החסרה ולוודא שהמודל והשנתון של הרכב המדובר נכונים</div>
         <textarea name="missing" id="missingta" cols="30" rows="10" [(ngModel)]="text"></textarea>
         <div class="div-2">תרצו להעלות תמונה של הנורה החסרה?</div>
-        <input class="input" type="file" (change)="handleFileSelect($event)" accept="image/*" name="photo" id="upload-photo">
+        <div class="upload-container">
+            <img *ngIf="imageUrl" [src]="imageUrl" alt="Preview" />
+
+            <button *ngIf="isNative" (click)="takePhoto()">
+                📸 Take a Photo
+            </button>
+
+            <input *ngIf="!isNative" type="file" class="input" accept="image/*"  name="photo" id="upload-photo" (change)="onFileSelected($event)" />
+        </div>
     </div>
     <div class="footer">
         <button class="but-1" (click)="validate()">אישור</button>

@@ -66,7 +66,7 @@ export class IconsPageComponent implements OnInit, DoCheck {
         this.dialog.open(NotificationsComponent,{
           height: '60px',
           data: {
-            message: 'משהו השתבש... נסה מאוחר יותר',
+            message: 'תודה...',
           },
           panelClass: 'not-r'
         });
