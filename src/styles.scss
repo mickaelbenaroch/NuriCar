@@ -27,7 +27,7 @@ app-root {
     height: 100%;
     display: flex;
     flex-direction: column;
-    app-splash-screen, app-main-page {
+    app-splash-screen, app-main-page, app-icons-page, app-focused-icon {
         height: 100%;
     }
 }
