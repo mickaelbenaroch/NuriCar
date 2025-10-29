@@ -1,41 +1,10 @@
+
 services:
   - type: static
     name: nuricar
     buildCommand: npm install && npm run build
     staticPublishPath: dist/WarningLightsApp
     routes:
-      - type: redirect
-        source: /main
-        destination: /
-        statusCode: 301
-      - type: redirect
-        source: /icons
-        destination: /
-        statusCode: 301
-      - type: redirect
-        source: /focus
-        destination: /
-        statusCode: 301
-      - type: redirect
-        source: /contact
-        destination: /
-        statusCode: 301
-      - type: redirect
-        source: /policy
-        destination: /
-        statusCode: 301
-      - type: redirect
-        source: /sos
-        destination: /
-        statusCode: 301
-      - type: redirect
-        source: /help
-        destination: /
-        statusCode: 301
-      - type: redirect
-        source: /tips
-        destination: /
-        statusCode: 301
       - type: rewrite
-        source: /*
+        source: /.*  # This catches all routes
         destination: /index.html
