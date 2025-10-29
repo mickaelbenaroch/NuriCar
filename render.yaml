@@ -4,7 +4,6 @@ services:
     buildCommand: npm install && npm run build
     staticPublishPath: dist/WarningLightsApp
     routes:
-      # Rewrite all routes to index.html for Angular routing
       - type: rewrite
         source: /*
         destination: /index.html
