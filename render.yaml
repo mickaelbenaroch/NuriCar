@@ -2,9 +2,5 @@
 services:
   - type: static
     name: nuricar
-    buildCommand: npm install && npm run build
+    buildCommand: npm install && npm run build:prod
     staticPublishPath: dist/WarningLightsApp
-    routes:
-      - type: rewrite
-        source: /.*  # This catches all routes
-        destination: /index.html

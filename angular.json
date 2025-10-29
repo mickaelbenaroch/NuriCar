@@ -32,6 +32,11 @@
                 "glob": "_redirects",
                 "input": "src/assets",
                 "output": "/"
+              },
+              {
+                "glob": ".htaccess",
+                "input": "src/assets",
+                "output": "/"
               }
             ],
             "styles": [
@@ -99,6 +104,11 @@
               "src/assets",
               {
                 "glob": "_redirects",
+                "input": "src/assets",
+                "output": "/"
+              },
+              {
+                "glob": ".htaccess",
                 "input": "src/assets",
                 "output": "/"
               }
