@@ -2,7 +2,7 @@ services:
   - type: web
     name: nuricar
     env: static
-    buildCommand: npm install && npm run build
+    buildCommand: npm install && npm run build && cp _redirects dist/WarningLightsApp/_redirects
     staticPublishPath: ./dist/WarningLightsApp
     headers:
       - path: /*
