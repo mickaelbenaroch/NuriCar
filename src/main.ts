@@ -6,7 +6,6 @@ import { provideHttpClient } from '@angular/common/http';
 import { importProvidersFrom } from '@angular/core';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
 
-// Import route configuration from app module
 import { MainPageComponent } from './app/components/main-page/main-page.component';
 import { IconsPageComponent } from './app/components/icons-page/icons-page.component';
 import { FocusedIconComponent } from './app/components/focused-icon/focused-icon.component';
@@ -31,7 +30,7 @@ const routes = [
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter(routes),
+    provideRouter(routes),  // <-- ONLY here
     provideAnimations(),
     provideHttpClient(),
     importProvidersFrom(NgxUiLoaderModule)
