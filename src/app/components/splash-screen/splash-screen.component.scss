@@ -1,7 +1,14 @@
+:host {
+    display: block;
+    min-height: 100vh;
+    height: 100vh;
+}
+
 .envelopSplash {
     text-align: right;
     direction: rtl;
-    height: 100%;
+    min-height: 100vh;
+    height: 100vh;
 
     .logo-div {
         display: flex;
@@ -18,7 +25,8 @@
 .secondScreen {
     text-align: right;
     direction: rtl;
-    height: 100%;
+    min-height: 100vh;
+    height: 100vh;
     .logo-div {
         display: flex;
         height: 100%;
@@ -52,6 +60,7 @@
         padding-bottom: 21px;
         padding-left: 72px;
         margin-top: 40px;
+        line-height: 22px;
         color: #FFF;
     }
     .button-div {

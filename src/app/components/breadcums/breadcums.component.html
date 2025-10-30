@@ -1,1 +1,8 @@
-<div>{{currentLocation}}</div>
+<div class="envelop">
+    <div class="breadcrumb-container" dir="rtl">
+      <span class="breadcrumb-item" *ngFor="let item of breadcrumbItems; let last = last" 
+            [class.active]="last">
+        {{ item }}
+      </span>
+    </div>
+</div>

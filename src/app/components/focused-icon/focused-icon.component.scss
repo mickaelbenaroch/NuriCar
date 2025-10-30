@@ -1,17 +1,18 @@
-.div-1 {
-    text-align: center;
-    font-size: 20px;    
-    color: white;
-    font-family: 'Assistant', sans-serif;
-    padding: 1.5rem;
-    line-height: initial;
+:host {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
 .arrow-div {
+    padding-top: 80px;
     width: 100%;
     text-align: left;
     margin-bottom: 15px;
     display: flex;
     justify-content: space-around;
+    flex-shrink: 0;
     app-breadcums {
         display: flex;
         align-items: center;
@@ -19,6 +20,35 @@
     .arrow {
         width: 45px;
         height: 45px;
+        display: flex;
+        margin-left: 70px;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        &:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+        
+        svg {
+            transition: transform 0.2s ease;
+        }
+        
+        &:hover svg {
+            transform: translateX(-2px);
+        }
     }
 }
 .envelopIconFocusPage {
@@ -27,6 +57,7 @@
     padding: 1rem;
     padding-top: 0px;
     padding-bottom: 0px;
+    flex-shrink: 0;
     img {
         width: 170px;
         height: 100px;
@@ -44,13 +75,113 @@
     text-align: right;
     padding: 20px;
     color: white;
+    flex-shrink: 0;
     .desc {
         text-align: right;
         color: white;
         padding: 20px;
+        line-height: 1.6;
+        word-wrap: break-word;
     }
 }
 .envelop {
     background: #1E1D1D;
-    height: 100%;
+    min-height: 100vh;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow-y: auto;
+    padding-left: 35px;
+    padding-right: 35px;
+}
+
+// Responsive design
+@media (max-width: 768px) {
+    .envelop {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .arrow-div {
+        padding-top: 60px;
+        
+        .arrow {
+            margin-left: 40px;
+        }
+        
+        app-breadcums {
+            .envelop {
+                margin-right: 30px !important;
+            }
+        }
+    }
+    
+    .desc-div {
+        padding: 15px;
+        
+        .desc {
+            padding: 15px;
+        }
+    }
+    
+    .envelopIconFocusPage img {
+        width: 150px;
+        height: 90px;
+    }
+}
+
+@media (max-width: 480px) {
+    .envelop {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .arrow-div {
+        padding-top: 50px;
+        
+        .arrow {
+            margin-left: 20px;
+            width: 40px;
+            height: 40px;
+        }
+        
+        app-breadcums {
+            .envelop {
+                margin-right: 15px !important;
+            }
+        }
+    }
+    
+    .desc-div {
+        padding: 12px;
+        
+        h3 {
+            font-size: 18px;
+        }
+        
+        .desc {
+            padding: 12px;
+            font-size: 14px;
+        }
+        
+        span {
+            font-size: 22px !important;
+        }
+    }
+    
+    .envelopIconFocusPage img {
+        width: 130px;
+        height: 80px;
+    }
+}
+
+@media (max-width: 360px) {
+    .arrow-div {
+        app-breadcums {
+            .envelop {
+                margin-right: 10px !important;
+            }
+        }
+    }
 }

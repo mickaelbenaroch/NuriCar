@@ -1,6 +1,17 @@
+:host {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 menu {
     margin: 0;
 }
-app-icons-page {
+
+app-icons-page, app-splash-screen, app-main-page, app-focused-icon,
+app-contact, app-help, app-tips, app-notifications, app-sos, app-missing-lights, app-policy {
     height: 100%;
+    min-height: 100vh;
+    flex: 1;
 }

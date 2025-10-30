@@ -1,16 +1,83 @@
 
-.envelop {
+:host {
+    display: block;
+    min-height: 100vh;
     background: #1E1D1D;
-    height: 100%;
+}
+
+.envelop {
+    min-height: inherit;
+    display: flex;
+    flex-direction: column;
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-bottom: 20px;
+}
+
+// Responsive padding
+@media (max-width: 768px) {
+    .envelop {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    
+    .div-1 {
+        font-size: 22px;
+        padding: 1rem;
+        padding-top: 60px;
+    }
+    
+    .arrow-div .arrow {
+        margin-left: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .envelop {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .div-1 {
+        font-size: 20px;
+        padding: 0.8rem;
+        padding-top: 50px;
+    }
+    
+    .arrow-div .arrow {
+        margin-left: 45px !important;
+    }
+    
+    .envelopIconPage {
+        padding: 0.5rem;
+        padding-top: 0px;
+        padding-bottom: 1.5rem;
+        
+        .icon-div {
+            margin: 10px;
+            .icon {
+                height: 45px;
+                width: 50px;
+            }
+        }
+    }
+    
+    .missing p {
+        font-size: 18px;
+        margin-bottom: 30px;
+        padding: 0 10px;
+    }
 }
 
 .div-1 {
     text-align: center;
-    font-size: 20px;    
+    font-size: 25px;    
     color: white;
     font-family: 'Assistant', sans-serif;
     padding: 1.5rem;
     line-height: initial;
+    padding-top: 80px;
+    flex-shrink: 0;
 }
 .arrow-div {
     width: 100%;
@@ -18,13 +85,47 @@
     margin-bottom: 15px;
     display: flex;
     justify-content: space-around;
+    flex-shrink: 0;
     app-breadcums {
         display: flex;
         align-items: center;
+        
+        .envelop {
+            margin-right: 80px !important;
+        }
     }
     .arrow {
         width: 45px;
         height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 12px;
+        margin-left: 70px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(10px);
+        
+        &:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        &:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+        
+        svg {
+            transition: transform 0.2s ease;
+        }
+        
+        &:hover svg {
+            transform: translateX(-2px);
+        }
     }
 }
 .envelopIconPage {
@@ -33,6 +134,7 @@
     justify-content: center;
     padding: 1rem;
     padding-top: 0px;
+    padding-bottom: 2rem;
     .icon-div {
         border-radius: 2px;
         margin: 15px;
@@ -46,6 +148,7 @@
     }
 }
 .missing {
+    flex-shrink: 0;
     p {
         margin-bottom: 40px;
         text-align: center;
@@ -58,5 +161,24 @@
             cursor: pointer;
             margin-right: 5px;
         }
+    }
+}
+
+// Responsive design for breadcrumbs spacing
+@media (max-width: 768px) {
+    .arrow-div app-breadcums .envelop {
+        margin-right: 50px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .arrow-div app-breadcums .envelop {
+        margin-right: 25px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .arrow-div app-breadcums .envelop {
+        margin-right: 15px !important;
     }
 }

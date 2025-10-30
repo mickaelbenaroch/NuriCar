@@ -1,9 +1,17 @@
+:host {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 .envelop {
     padding: 10px;
     padding-top: 0;
     direction: rtl;
     text-align: right;
     font-family: 'Assistant', sans-serif;
+    flex: 1;
     h1 {
         text-align: center;
     }
